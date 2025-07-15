@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_87ee3482cb59cf019a6facb798f42f7e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_87ee3482cb59cf019a6facb798f42f7e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_87ee3482cb59cf019a6facb798f42f7e = L.map(
+                "map_87ee3482cb59cf019a6facb798f42f7e",
+                {
+                    center: [25.85, -80.25],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 9,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_87ee3482cb59cf019a6facb798f42f7e);
+
+            
+
+        
+    
+            var tile_layer_1f81406e65af61515912ad21176148c2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1f81406e65af61515912ad21176148c2.addTo(map_87ee3482cb59cf019a6facb798f42f7e);
+        
+    
+            var feature_group_123b24d5602e6199d903618f24c62c9d = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var heat_map_d7c315aff98b6b967aa66f034b69c530 = L.heatLayer(
+                [[25.9565, -80.1392], [26.1224, -80.1373], [26.2465, -80.2064], [25.7215, -80.2684], [26.3587, -80.0831], [26.9342, -80.0942], [27.273, -80.3582], [30.3322, -81.6557], [30.3322, -81.6557], [28.5383, -81.3792], [27.9506, -82.4572], [27.9506, -82.4572], [27.9506, -82.4572], [28.5383, -81.3792], [27.9378, -82.2859], [27.9506, -82.4572], [27.9506, -82.4572], [27.9659, -82.8001], [28.6, -81.3392], [28.325, -81.5336], [27.9659, -82.8001], [27.9506, -82.4572], [27.7676, -82.6403], [25.7617, -80.1918], [25.7906, -80.13], [25.7215, -80.2684], [25.9861, -80.3036], [28.0836, -80.6081], [30.3322, -81.6557], [30.3322, -81.6557], [26.0078, -80.2963], [26.6618, -80.2684], [27.2547, -80.2297], [25.7617, -80.1918], [26.3587, -80.0831], [26.0112, -80.1495], [26.9342, -80.0942], [26.142, -81.7948], [28.0836, -80.6081], [28.1817, -82.3539], [27.7676, -82.6403], [27.9378, -82.2859], [28.1817, -82.3539], [29.6516, -82.3248], [28.5653, -81.5862], [27.8661, -82.3265], [25.9565, -80.1392], [26.3587, -80.0831], [28.5653, -81.5862], [30.3322, -81.6557], [28.5383, -81.3792], [30.3322, -81.6557], [27.314003320056, -82.450939994991], [25.7215, -80.2684], [25.9861, -80.3036], [25.7617, -80.1918], [25.7906, -80.13], [28.6, -81.3392], [30.466091562328, -87.204340916782], [27.9506, -82.4572], [26.3587, -80.0831], [26.513908475257, -81.897789193059], [29.203119462554, -81.056556574889], [26.09212019992, -80.365927786992], [27.9506, -82.4572], [35.127447542219, -89.855879664823], [30.3322, -81.6557], [29.6516, -82.3248], [30.162927426098, -85.662665846289], [28.7589, -81.3178], [26.3587, -80.0831], [26.044457002023, -80.277754964147], [26.142, -81.7948], [26.9342, -80.0942], [28.0836, -80.6081], [30.696496511238, -88.079235384599], [28.069101838038, -82.399232804003], [29.6516, -82.3248], [29.6516, -82.3248], [25.7617, -80.1918], [28.6, -81.3392], [28.5383, -81.3792], [28.689621450286, -81.386600352194], [28.0836, -80.6081], [27.9506, -82.4572], [26.11033, -80.37403], [26.25138, -80.21014], [25.78703, -80.20444]],
+                {
+  "minOpacity": 0.8,
+  "maxZoom": 18,
+  "radius": 25,
+  "blur": 35,
+  "gradient": {
+  0.2: "#C6DBEF",
+  0.4: "#6BAED6",
+  0.6: "#3182BD",
+  0.8: "#08519C",
+  1.0: "#08306B",
+},
+}
+            );
+        
+    
+            heat_map_d7c315aff98b6b967aa66f034b69c530.addTo(feature_group_123b24d5602e6199d903618f24c62c9d);
+        
+    
+            feature_group_123b24d5602e6199d903618f24c62c9d.addTo(map_87ee3482cb59cf019a6facb798f42f7e);
+        
+    
+            var marker_cluster_4f3f99819ab0a87e5b53422a506d52e4 = L.markerClusterGroup(
+                {
+  "disableClusteringAtZoom": 14,
+}
+            );
+        
+    
+            var circle_marker_50e7707b450ea4c35180fa41e7bb8c13 = L.circleMarker(
+                [25.7215, -80.2684],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_50e7707b450ea4c35180fa41e7bb8c13.bindTooltip(
+                `<div>
+                     CONCEPTIONS FERTILITY LABORATORIES LLC • Conceptions Florida • IVF FLORIDA Reproductive Associates
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_67077fda2aa7fca2966e5e4b3aa3a937 = L.circleMarker(
+                [25.7617, -80.1918],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_67077fda2aa7fca2966e5e4b3aa3a937.bindTooltip(
+                `<div>
+                     FERTILITY & IVF CENTER OF MIAMI • Fertility Center of Miami • IVFMD • UNIVERSITY OF MIAMI CENTER FOR REPRODUCTIVE MEDICINE LABORATORY
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b545e53a4a4a991895631b18784db54b = L.circleMarker(
+                [25.78703, -80.20444],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_b545e53a4a4a991895631b18784db54b.bindTooltip(
+                `<div>
+                     University of Miami Infertility Center
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_65cb20197dfdf0b9159dc7d6cf3e382f = L.circleMarker(
+                [25.7906, -80.13],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_65cb20197dfdf0b9159dc7d6cf3e382f.bindTooltip(
+                `<div>
+                     FERTILITY & IVF CENTER OF MIAMI • Fertility Center of Miami
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1ebc126530539e80010401f26fb7558b = L.circleMarker(
+                [25.9565, -80.1392],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_1ebc126530539e80010401f26fb7558b.bindTooltip(
+                `<div>
+                     AVENTURA FERTILITY AND IVF • CCRM Fertility of Miami
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d2f363d2c63f71a0db1954f11e986164 = L.circleMarker(
+                [25.9861, -80.3036],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_d2f363d2c63f71a0db1954f11e986164.bindTooltip(
+                `<div>
+                     CONCEPTIONS FERTILITY LABORATORIES LLC • Conceptions Florida
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_da438f9f454aafabc0b254df3b01aa0b = L.circleMarker(
+                [26.0078, -80.2963],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_da438f9f454aafabc0b254df3b01aa0b.bindTooltip(
+                `<div>
+                     IVF FLORIDA Reproductive Associates
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_429a501490895d91df3504a88a3dd918 = L.circleMarker(
+                [26.0112, -80.1495],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_429a501490895d91df3504a88a3dd918.bindTooltip(
+                `<div>
+                     IVFMD
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_40a303814490888c7b028cb5aea8eeeb = L.circleMarker(
+                [26.04446, -80.27775],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_40a303814490888c7b028cb5aea8eeeb.bindTooltip(
+                `<div>
+                     SOUTH FLORIDA INSTITUTE FOR REPRODUCTIVE MEDICINE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1375b8a8d2a38597eff0bf13b235d5a4 = L.circleMarker(
+                [26.09212, -80.36593],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_1375b8a8d2a38597eff0bf13b235d5a4.bindTooltip(
+                `<div>
+                     FLORIDA INSTITUTE FOR REPRODUCTIVE SCIENCES AND TECHNOLOGIES
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ef59b74b10ddfb947974280379a1fcf2 = L.circleMarker(
+                [26.11033, -80.37403],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_ef59b74b10ddfb947974280379a1fcf2.bindTooltip(
+                `<div>
+                     F.I.R.S.T., Florida Institute for Reproductive Sciences and Technologies
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_74c6bc9b9e44866037bce73fb46a872a = L.circleMarker(
+                [26.1224, -80.1373],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_74c6bc9b9e44866037bce73fb46a872a.bindTooltip(
+                `<div>
+                     Ceibo Fertility Center
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5c968248181de38435c5c9dd67bd9b60 = L.circleMarker(
+                [26.142, -81.7948],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_5c968248181de38435c5c9dd67bd9b60.bindTooltip(
+                `<div>
+                     IVFMD • SOUTH FLORIDA INSTITUTE FOR REPRODUCTIVE MEDICINE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0799d289ab50faa01edc5d905641b2bd = L.circleMarker(
+                [26.2465, -80.2064],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_0799d289ab50faa01edc5d905641b2bd.bindTooltip(
+                `<div>
+                     IVF FLORIDA Reproductive Associates
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4027aa7899b64d25aa4580f16650d46a = L.circleMarker(
+                [26.25138, -80.21014],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_4027aa7899b64d25aa4580f16650d46a.bindTooltip(
+                `<div>
+                     IVF Florida Reproductive Associates
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9db1e189d4738145354daa7c5ee9f5f7 = L.circleMarker(
+                [26.3587, -80.0831],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_9db1e189d4738145354daa7c5ee9f5f7.bindTooltip(
+                `<div>
+                     BOCA FERTILITY • IVF FLORIDA Reproductive Associates • IVFMD • PALM BEACH FERTILITY CENTER • SOUTH FL INSTITUTE FOR REPRODUCTIVE MEDICINE LLC
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ca82e498a53b294bd66fe33aaba11958 = L.circleMarker(
+                [26.51391, -81.89779],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_ca82e498a53b294bd66fe33aaba11958.bindTooltip(
+                `<div>
+                     SOUTHWEST FLORIDA FERTILITY CENTER PA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_608cc05f546f0645cc758e4ebfe3fd13 = L.circleMarker(
+                [26.6618, -80.2684],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_608cc05f546f0645cc758e4ebfe3fd13.bindTooltip(
+                `<div>
+                     IVF FLORIDA Reproductive Associates
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_22acbc4cf138dbab51f310af4aee7051 = L.circleMarker(
+                [26.9342, -80.0942],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_22acbc4cf138dbab51f310af4aee7051.bindTooltip(
+                `<div>
+                     IVF FLORIDA Reproductive Associates • IVFMD • SOUTH FLORIDA INSTITUTE FOR REPRODUCTIVE MEDICINE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f510e5f08ce28f48ebb2e0a48f4ebd01 = L.circleMarker(
+                [27.2547, -80.2297],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_f510e5f08ce28f48ebb2e0a48f4ebd01.bindTooltip(
+                `<div>
+                     IVF FLORIDA Reproductive Associates
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4bf2b4317e0bcc395c254c45ce5cbacf = L.circleMarker(
+                [27.273, -80.3582],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_4bf2b4317e0bcc395c254c45ce5cbacf.bindTooltip(
+                `<div>
+                     IVF FLORIDA Reproductive Associates
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d5c5099ca2050f25fd2075734e71c75 = L.circleMarker(
+                [27.314, -82.45094],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_3d5c5099ca2050f25fd2075734e71c75.bindTooltip(
+                `<div>
+                     CNY FERTILITY PLLC
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d49cf3ba191cf2e3a2683454a4297fe5 = L.circleMarker(
+                [27.7676, -82.6403],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_d49cf3ba191cf2e3a2683454a4297fe5.bindTooltip(
+                `<div>
+                     Florida Fertility Institute • Shady Grove Fertility
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aafe9d8039b9c30e23d61d51be5e77b6 = L.circleMarker(
+                [27.8661, -82.3265],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_aafe9d8039b9c30e23d61d51be5e77b6.bindTooltip(
+                `<div>
+                     Brown Fertility
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ba2321eeb1547629d5f51c136a750e78 = L.circleMarker(
+                [27.9378, -82.2859],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_ba2321eeb1547629d5f51c136a750e78.bindTooltip(
+                `<div>
+                     Shady Grove Fertility • The Reproductive Medicine Group
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b24bfd46df107e406d86f0e45f4abb7d = L.circleMarker(
+                [27.9506, -82.4572],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_b24bfd46df107e406d86f0e45f4abb7d.bindTooltip(
+                `<div>
+                     Brown Fertility • Florida Fertility Institute • ORANGE BLOSSOM FERTILITY, LLC • REPRODUCTIVE HEALTH ASSOCIATES • RMG IVF SURGERY CENTER LLC • Shady Grove Fertility • The Reproductive Medicine Group
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d0288d92f4ed25ced593384f61677bfb = L.circleMarker(
+                [27.9659, -82.8001],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_d0288d92f4ed25ced593384f61677bfb.bindTooltip(
+                `<div>
+                     Florida Fertility Institute • The Reproductive Medicine Group
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d20b4ced963f667d1070a17f71c9cd90 = L.circleMarker(
+                [28.0691, -82.39923],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_d20b4ced963f667d1070a17f71c9cd90.bindTooltip(
+                `<div>
+                     THE REPRODUCTIVE MEDICINE GROUP PA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2174851ccb3d2ac2a707c0b7a053c410 = L.circleMarker(
+                [28.0836, -80.6081],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_2174851ccb3d2ac2a707c0b7a053c410.bindTooltip(
+                `<div>
+                     IVF LIFE INC • IVFMD • SOUTH FLORIDA INSTITUTE FOR REPRODUCTIVE MEDICINE PA • Viera Fertility Center
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6628abcd2d662844f50299b66692014d = L.circleMarker(
+                [28.1817, -82.3539],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_6628abcd2d662844f50299b66692014d.bindTooltip(
+                `<div>
+                     Shady Grove Fertility • The Reproductive Medicine Group
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_72d5f1cfa2cfa4de0bf230c0f58021ad = L.circleMarker(
+                [28.325, -81.5336],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_72d5f1cfa2cfa4de0bf230c0f58021ad.bindTooltip(
+                `<div>
+                     Center for Reproductive Medicine Orlando
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f8046494dae24f7e8208e896ef7d75ed = L.circleMarker(
+                [28.5383, -81.3792],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_f8046494dae24f7e8208e896ef7d75ed.bindTooltip(
+                `<div>
+                     BROWN FERTILITY LLC • Brown Fertility • IVF LABORATORY OF CENTRAL FLORIDA, LLC • Shady Grove Fertility
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b7efaf763ba206b538d672f9775ace9 = L.circleMarker(
+                [28.5653, -81.5862],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_9b7efaf763ba206b538d672f9775ace9.bindTooltip(
+                `<div>
+                     BROWN FERTILITY ASSOCIATES PA • Brown Fertility
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_90d399b07d4e79f5881ef864e9ce2a53 = L.circleMarker(
+                [28.6, -81.3392],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_90d399b07d4e79f5881ef864e9ce2a53.bindTooltip(
+                `<div>
+                     FERTILITY CARE • IVF LABORATORY OF CENTRAL FLORIDA LLC • The IVF Center SM
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a25d6bffe899a71885588b582dff5ac7 = L.circleMarker(
+                [28.68962, -81.3866],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_a25d6bffe899a71885588b582dff5ac7.bindTooltip(
+                `<div>
+                     IVF LIFE INC
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f5a864501e1a1c3b657a4f4346ff4cae = L.circleMarker(
+                [28.7589, -81.3178],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_f5a864501e1a1c3b657a4f4346ff4cae.bindTooltip(
+                `<div>
+                     REPRODUCTIVE MEDICAL ASSOCIATES OF FLORIDA LLC
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b42664a9dee8553bcd40d2c2aaf68288 = L.circleMarker(
+                [29.20312, -81.05656],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_b42664a9dee8553bcd40d2c2aaf68288.bindTooltip(
+                `<div>
+                     FLORIDA INSTITUTE FOR REPRODUCTIVE MEDICINE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_27df69bcaf5732c2f5a616da471cea68 = L.circleMarker(
+                [29.6516, -82.3248],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_27df69bcaf5732c2f5a616da471cea68.bindTooltip(
+                `<div>
+                     Brown Fertility • REPRODUCTIVE MANAGEMENT SERVICES INC • UF HEALTH REPRODUCTIVE MEDICINE - SPRINGHILL
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_071cc8e2420d5b2954c6ca4db7769257 = L.circleMarker(
+                [30.16293, -85.66267],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_071cc8e2420d5b2954c6ca4db7769257.bindTooltip(
+                `<div>
+                     REPRODUCTIVE MANAGEMENT SERVICES, INC
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d12db9113934a55d8bbe39570de749ee = L.circleMarker(
+                [30.3322, -81.6557],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_d12db9113934a55d8bbe39570de749ee.bindTooltip(
+                `<div>
+                     BROWN FERTILITY LLC • Brown Fertility • Florida Institute for Reproductive Medicine (FIRM) • IVF FLORIDA Reproductive Associates • REPRODUCTIVE MANAGEMENT SERVICES INC
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_299e0674149eb38a0e9333aa79da4c6d = L.circleMarker(
+                [30.46609, -87.20434],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_299e0674149eb38a0e9333aa79da4c6d.bindTooltip(
+                `<div>
+                     NEW LEADERS IN FERTILITY & ENDOCRINOLOGY LLC
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_483f3ce55d3a8cf512889625d557bfff = L.circleMarker(
+                [30.6965, -88.07924],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_483f3ce55d3a8cf512889625d557bfff.bindTooltip(
+                `<div>
+                     THE CENTER FOR REPRODUCTIVE MEDICINE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9bbcecea7650df533e8840ee85ffae1b = L.circleMarker(
+                [35.12745, -89.85588],
+                {"bubblingMouseEvents": true, "color": "#555555", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#555555", "fillOpacity": 0.95, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_4f3f99819ab0a87e5b53422a506d52e4);
+        
+    
+            circle_marker_9bbcecea7650df533e8840ee85ffae1b.bindTooltip(
+                `<div>
+                     REPRODUCTIVE LABORATORY INC
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_4f3f99819ab0a87e5b53422a506d52e4.addTo(map_87ee3482cb59cf019a6facb798f42f7e);
+        
+    
+            var feature_group_ff754ec930bdd70a7e23d612840eb739 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_e20afe123cdddbe6a61e643f990c67ce = L.marker(
+                [25.9623, -80.1442],
+                {
+}
+            ).addTo(feature_group_ff754ec930bdd70a7e23d612840eb739);
+        
+    
+            var beautify_icon_59f54fc32bfa77965151cc3f832214aa = new L.BeautifyIcon.icon(
+                {
+  "icon": "star",
+  "iconShape": "marker",
+  "borderWidth": 3,
+  "borderColor": "#005D8C",
+  "textColor": "white",
+  "backgroundColor": "#005D8C",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_e20afe123cdddbe6a61e643f990c67ce.setIcon(beautify_icon_59f54fc32bfa77965151cc3f832214aa);
+        
+    
+            marker_e20afe123cdddbe6a61e643f990c67ce.bindTooltip(
+                `<div>
+                     Main Hub – Miami
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e20afe123cdddbe6a61e643f990c67ce.setIcon(beautify_icon_59f54fc32bfa77965151cc3f832214aa);
+            
+    
+            var marker_90eb3fabcad85b808dae9e1a0e0698f6 = L.marker(
+                [26.1103, -80.374],
+                {
+}
+            ).addTo(feature_group_ff754ec930bdd70a7e23d612840eb739);
+        
+    
+            var beautify_icon_d4409a73500f7ad34f6114a92ada5f56 = new L.BeautifyIcon.icon(
+                {
+  "icon": "star",
+  "iconShape": "marker",
+  "borderWidth": 3,
+  "borderColor": "#005D8C",
+  "textColor": "white",
+  "backgroundColor": "#005D8C",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_90eb3fabcad85b808dae9e1a0e0698f6.setIcon(beautify_icon_d4409a73500f7ad34f6114a92ada5f56);
+        
+    
+            marker_90eb3fabcad85b808dae9e1a0e0698f6.bindTooltip(
+                `<div>
+                     Satellite – Weston
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_90eb3fabcad85b808dae9e1a0e0698f6.setIcon(beautify_icon_d4409a73500f7ad34f6114a92ada5f56);
+            
+    
+            var marker_c40812f7dc098a243425a2b562634904 = L.marker(
+                [25.811, -80.334],
+                {
+}
+            ).addTo(feature_group_ff754ec930bdd70a7e23d612840eb739);
+        
+    
+            var beautify_icon_effebf750fd48378f6bc235076957fa7 = new L.BeautifyIcon.icon(
+                {
+  "icon": "star",
+  "iconShape": "marker",
+  "borderWidth": 3,
+  "borderColor": "#005D8C",
+  "textColor": "white",
+  "backgroundColor": "#005D8C",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_c40812f7dc098a243425a2b562634904.setIcon(beautify_icon_effebf750fd48378f6bc235076957fa7);
+        
+    
+            marker_c40812f7dc098a243425a2b562634904.bindTooltip(
+                `<div>
+                     Satellite – Doral
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c40812f7dc098a243425a2b562634904.setIcon(beautify_icon_effebf750fd48378f6bc235076957fa7);
+            
+    
+            var marker_4f51c80fc664dc950354395a282a9842 = L.marker(
+                [25.774, -80.1417],
+                {
+}
+            ).addTo(feature_group_ff754ec930bdd70a7e23d612840eb739);
+        
+    
+            var beautify_icon_250be9cab86323de6764818020929552 = new L.BeautifyIcon.icon(
+                {
+  "icon": "star",
+  "iconShape": "marker",
+  "borderWidth": 3,
+  "borderColor": "#005D8C",
+  "textColor": "white",
+  "backgroundColor": "#005D8C",
+  "innerIconStyle": "",
+  "spin": false,
+  "isAlphaNumericIcon": false,
+}
+            )
+            marker_4f51c80fc664dc950354395a282a9842.setIcon(beautify_icon_250be9cab86323de6764818020929552);
+        
+    
+            marker_4f51c80fc664dc950354395a282a9842.bindTooltip(
+                `<div>
+                     Satellite – Miami Beach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4f51c80fc664dc950354395a282a9842.setIcon(beautify_icon_250be9cab86323de6764818020929552);
+            
+    
+            feature_group_ff754ec930bdd70a7e23d612840eb739.addTo(map_87ee3482cb59cf019a6facb798f42f7e);
+        
+    
+            var feature_group_18a8ca063851cdb0d66d8f6716e9d8f8 = L.featureGroup(
+                {
+}
+            );
+        
+    
+        function geo_json_8eef0d644b0ea552c7bd45faf7c0b02b_styler(feature) {
+            switch(feature.properties.fillColor) {
+                default:
+                    return {"color": "#1ABC9C", "fillColor": "#1ABC9C", "fillOpacity": 0.25, "weight": 2};
+            }
+        }
+        function geo_json_8eef0d644b0ea552c7bd45faf7c0b02b_highlighter(feature) {
+            switch(feature.properties.fillColor) {
+                default:
+                    return {"weight": 3};
+            }
+        }
+
+        function geo_json_8eef0d644b0ea552c7bd45faf7c0b02b_onEachFeature(feature, layer) {
+
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_8eef0d644b0ea552c7bd45faf7c0b02b.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_8eef0d644b0ea552c7bd45faf7c0b02b_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_8eef0d644b0ea552c7bd45faf7c0b02b = L.geoJson(null, {
+                onEachFeature: geo_json_8eef0d644b0ea552c7bd45faf7c0b02b_onEachFeature,
+            
+                style: geo_json_8eef0d644b0ea552c7bd45faf7c0b02b_styler,
+            ...{
+}
+        });
+
+        function geo_json_8eef0d644b0ea552c7bd45faf7c0b02b_add (data) {
+            geo_json_8eef0d644b0ea552c7bd45faf7c0b02b
+                .addData(data);
+        }
+            geo_json_8eef0d644b0ea552c7bd45faf7c0b02b_add({"features": [{"geometry": {"coordinates": [[[-80.117126, 26.372406], [-80.117251, 26.368567], [-80.119688, 26.368442], [-80.119933, 26.361249], [-80.118927, 26.352442], [-80.119222, 26.350538], [-80.120023, 26.350442], [-80.119199, 26.350369], [-80.118487, 26.348442], [-80.118014, 26.330442], [-80.119664, 26.324442], [-80.121687, 26.322442], [-80.121181, 26.320442], [-80.123469, 26.320099], [-80.125126, 26.322447], [-80.127554, 26.32287], [-80.129126, 26.322001], [-80.130093, 26.319409], [-80.131712, 26.318442], [-80.12723, 26.314338], [-80.127885, 26.311201], [-80.129238, 26.310442], [-80.128875, 26.308442], [-80.1302, 26.305516], [-80.14486, 26.304442], [-80.141126, 26.30243], [-80.138718, 26.30285], [-80.137578, 26.300442], [-80.137284, 26.296442], [-80.135126, 26.295319], [-80.13376, 26.299076], [-80.130572, 26.299888], [-80.129126, 26.301474], [-80.128376, 26.301192], [-80.127776, 26.298442], [-80.12492, 26.296648], [-80.125045, 26.292361], [-80.130936, 26.290442], [-80.127126, 26.287593], [-80.127126, 26.285115], [-80.131126, 26.282033], [-80.133231, 26.286442], [-80.13138, 26.290188], [-80.132949, 26.290619], [-80.135126, 26.294156], [-80.137909, 26.290442], [-80.138242, 26.287558], [-80.141126, 26.284736], [-80.139033, 26.282442], [-80.141126, 26.280902], [-80.143126, 26.28114], [-80.144176, 26.280442], [-80.143838, 26.278442], [-80.141806, 26.276442], [-80.142442, 26.275758], [-80.143968, 26.2756], [-80.146496, 26.277072], [-80.149959, 26.277609], [-80.150632, 26.280442], [-80.153126, 26.282002], [-80.154129, 26.277445], [-80.156017, 26.275333], [-80.167126, 26.275343], [-80.167868, 26.276442], [-80.169126, 26.303749], [-80.170135, 26.276442], [-80.171126, 26.274808], [-80.175633, 26.274442], [-80.171126, 26.27373], [-80.169715, 26.263853], [-80.168337, 26.262442], [-80.169126, 26.261324], [-80.171126, 26.2615], [-80.171535, 26.260851], [-80.182166, 26.260442], [-80.179722, 26.259846], [-80.179126, 26.258281], [-80.177785, 26.259102], [-80.175126, 26.258711], [-80.173126, 26.256893], [-80.171377, 26.258693], [-80.170335, 26.258442], [-80.169126, 26.25712], [-80.168128, 26.252442], [-80.168362, 26.246442], [-80.169126, 26.245404], [-80.17189, 26.245678], [-80.177126, 26.247825], [-80.180159, 26.245475], [-80.182151, 26.245417], [-80.183126, 26.246608], [-80.183775, 26.245091], [-80.185126, 26.244928], [-80.186717, 26.246442], [-80.186812, 26.248128], [-80.185779, 26.248442], [-80.187126, 26.24976], [-80.187673, 26.246989], [-80.189539, 26.244442], [-80.188596, 26.242972], [-80.188973, 26.240289], [-80.19188, 26.239688], [-80.195126, 26.243039], [-80.195987, 26.237303], [-80.203975, 26.236442], [-80.201126, 26.233696], [-80.197125, 26.232443], [-80.194723, 26.230442], [-80.193126, 26.229783], [-80.187126, 26.230703], [-80.185853, 26.228442], [-80.186713, 26.226442], [-80.186476, 26.223792], [-80.188685, 26.222442], [-80.189126, 26.220621], [-80.190616, 26.219932], [-80.192742, 26.216058], [-80.194818, 26.214134], [-80.196428, 26.213744], [-80.197126, 26.21189], [-80.198693, 26.212009], [-80.198955, 26.208271], [-80.200517, 26.208442], [-80.199636, 26.212442], [-80.205126, 26.219967], [-80.207047, 26.216442], [-80.206291, 26.214442], [-80.207126, 26.212629], [-80.209126, 26.21346], [-80.210611, 26.210442], [-80.211526, 26.210442], [-80.213241, 26.212442], [-80.212367, 26.214442], [-80.215852, 26.216442], [-80.212263, 26.218442], [-80.216494, 26.220442], [-80.220139, 26.225429], [-80.221126, 26.228486], [-80.223639, 26.222442], [-80.223386, 26.220442], [-80.227584, 26.218442], [-80.232279, 26.214442], [-80.230891, 26.212442], [-80.231779, 26.210442], [-80.233126, 26.209847], [-80.234719, 26.210442], [-80.237126, 26.214268], [-80.238421, 26.209737], [-80.243327, 26.208442], [-80.241126, 26.207646], [-80.240003, 26.205565], [-80.239746, 26.204442], [-80.241546, 26.202022], [-80.24065, 26.200918], [-80.240618, 26.197934], [-80.241616, 26.197952], [-80.242499, 26.201069], [-80.247126, 26.203651], [-80.249126, 26.201407], [-80.253126, 26.200823], [-80.252731, 26.198442], [-80.255126, 26.195663], [-80.259851, 26.194442], [-80.25392, 26.191648], [-80.252715, 26.186853], [-80.253218, 26.184534], [-80.255636, 26.180952], [-80.259127, 26.178443], [-80.259186, 26.176442], [-80.261822, 26.175746], [-80.262654, 26.178914], [-80.263627, 26.178943], [-80.265126, 26.177217], [-80.267126, 26.17985], [-80.269702, 26.177018], [-80.269652, 26.174442], [-80.271126, 26.172591], [-80.273126, 26.170784], [-80.274531, 26.171036], [-80.278224, 26.173344], [-80.278429, 26.175745], [-80.277331, 26.176442], [-80.281938, 26.18163], [-80.283126, 26.185498], [-80.285233, 26.184442], [-80.284392, 26.183176], [-80.285126, 26.180271], [-80.287709, 26.182442], [-80.289837, 26.186442], [-80.285633, 26.18895], [-80.28389, 26.193206], [-80.280904, 26.194442], [-80.285506, 26.196442], [-80.286482, 26.199086], [-80.28884, 26.200728], [-80.289126, 26.20192], [-80.29023, 26.196442], [-80.293126, 26.195735], [-80.293772, 26.196442], [-80.294272, 26.202442], [-80.296342, 26.203226], [-80.296746, 26.204442], [-80.295976, 26.206442], [-80.297099, 26.228415], [-80.295526, 26.228442], [-80.297126, 26.229042], [-80.298334, 26.202442], [-80.295913, 26.201655], [-80.29554, 26.200442], [-80.296417, 26.198442], [-80.296549, 26.190442], [-80.302053, 26.18537], [-80.302635, 26.183951], [-80.306127, 26.183443], [-80.312836, 26.176152], [-80.314276, 26.175592], [-80.31656, 26.171876], [-80.320078, 26.171394], [-80.324454, 26.166442], [-80.326406, 26.165722], [-80.326891, 26.164207], [-80.328432, 26.163748], [-80.328898, 26.162214], [-80.330452, 26.161768], [-80.330904, 26.16022], [-80.332469, 26.159785], [-80.33291, 26.158226], [-80.334488, 26.157804], [-80.334915, 26.156232], [-80.336504, 26.15582], [-80.336921, 26.154237], [-80.338643, 26.153959], [-80.342709, 26.150025], [-80.343126, 26.148694], [-80.344639, 26.147955], [-80.34452, 26.134442], [-80.34641, 26.132442], [-80.347126, 26.128661], [-80.351126, 26.131591], [-80.357619, 26.131949], [-80.354638, 26.136442], [-80.355126, 26.137542], [-80.357649, 26.136965], [-80.360726, 26.134042], [-80.364061, 26.133377], [-80.364529, 26.132442], [-80.362689, 26.130442], [-80.363126, 26.128176], [-80.363733, 26.129835], [-80.373126, 26.130155], [-80.373714, 26.131854], [-80.381126, 26.132135], [-80.381759, 26.133809], [-80.389126, 26.134111], [-80.39154, 26.136028], [-80.397126, 26.136087], [-80.397887, 26.137681], [-80.399126, 26.138061], [-80.405126, 26.138054], [-80.407126, 26.139885], [-80.413126, 26.140016], [-80.415126, 26.141989], [-80.423126, 26.14196], [-80.425126, 26.143939], [-80.431126, 26.143903], [-80.433126, 26.145863], [-80.439126, 26.14583], [-80.441869, 26.148442], [-80.442093, 26.156442], [-80.44469, 26.156878], [-80.444455, 26.164442], [-80.446798, 26.16477], [-80.447126, 26.171847], [-80.447702, 26.164442], [-80.445935, 26.162442], [-80.446141, 26.156442], [-80.443908, 26.152442], [-80.444827, 26.148143], [-80.447126, 26.147208], [-80.453126, 26.147721], [-80.479234, 26.146442], [-80.456282, 26.145286], [-80.451126, 26.145197], [-80.449126, 26.145884], [-80.447126, 26.143145], [-80.445126, 26.143741], [-80.442283, 26.143285], [-80.441679, 26.142442], [-80.442006, 26.136442], [-80.439894, 26.134442], [-80.439383, 26.126442], [-80.437516, 26.126052], [-80.437126, 26.124172], [-80.43692, 26.126442], [-80.438369, 26.127199], [-80.438575, 26.128442], [-80.438309, 26.136442], [-80.440155, 26.138442], [-80.439562, 26.142878], [-80.435126, 26.143085], [-80.433126, 26.141], [-80.426622, 26.140946], [-80.425514, 26.138442], [-80.425672, 26.133896], [-80.424266, 26.132442], [-80.424138, 26.130442], [-80.421865, 26.129703], [-80.421126, 26.12653], [-80.419126, 26.1259], [-80.415168, 26.126442], [-80.414773, 26.128089], [-80.41575, 26.129818], [-80.419951, 26.131617], [-80.419612, 26.134928], [-80.413126, 26.136868], [-80.408532, 26.135036], [-80.406346, 26.131222], [-80.40288, 26.130442], [-80.403126, 26.129049], [-80.405126, 26.129848], [-80.407506, 26.126822], [-80.405126, 26.121613], [-80.403126, 26.121537], [-80.401126, 26.123515], [-80.396189, 26.123379], [-80.395723, 26.117039], [-80.3996, 26.116442], [-80.396265, 26.115303], [-80.395126, 26.111645], [-80.39391, 26.112442], [-80.39456, 26.114442], [-80.392773, 26.116089], [-80.387126, 26.1161], [-80.385597, 26.114442], [-80.385161, 26.110407], [-80.381126, 26.109649], [-80.380078, 26.108442], [-80.380007, 26.106442], [-80.381126, 26.105002], [-80.384551, 26.105867], [-80.386728, 26.104442], [-80.383761, 26.103807], [-80.383717, 26.100442], [-80.385126, 26.09924], [-80.387126, 26.099575], [-80.389126, 26.097139], [-80.39057, 26.098442], [-80.390666, 26.101982], [-80.389961, 26.102442], [-80.390664, 26.102904], [-80.393126, 26.102667], [-80.395126, 26.101392], [-80.396785, 26.102784], [-80.39863, 26.102938], [-80.399045, 26.104523], [-80.40097, 26.104442], [-80.399202, 26.104366], [-80.399181, 26.102387], [-80.397368, 26.1022], [-80.397218, 26.10035], [-80.395469, 26.100099], [-80.395126, 26.097542], [-80.392637, 26.096931], [-80.392135, 26.095451], [-80.393685, 26.094442], [-80.393816, 26.093132], [-80.393067, 26.090501], [-80.391716, 26.089852], [-80.387965, 26.091281], [-80.386558, 26.09101], [-80.388321, 26.087637], [-80.391586, 26.084902], [-80.391126, 26.080342], [-80.390089, 26.083405], [-80.387126, 26.085117], [-80.385126, 26.085015], [-80.383936, 26.083632], [-80.383126, 26.079188], [-80.377126, 26.081058], [-80.376366, 26.080442], [-80.374106, 26.074442], [-80.374232, 26.072442], [-80.371126, 26.072184], [-80.369126, 26.073381], [-80.367157, 26.072411], [-80.366972, 26.068442], [-80.368977, 26.066442], [-80.369539, 26.064442], [-80.375126, 26.06307], [-80.393653, 26.062442], [-80.389645, 26.061923], [-80.389126, 26.06037], [-80.387126, 26.060881], [-80.385126, 26.059106], [-80.383487, 26.060803], [-80.381126, 26.061197], [-80.379829, 26.059739], [-80.379476, 26.056442], [-80.377359, 26.056209], [-80.377126, 26.054904], [-80.375752, 26.057068], [-80.373126, 26.056826], [-80.371126, 26.058283], [-80.369126, 26.056125], [-80.365126, 26.055156], [-80.363591, 26.050442], [-80.362764, 26.038804], [-80.364544, 26.036442], [-80.365633, 26.032949], [-80.369126, 26.03151], [-80.371126, 26.032118], [-80.373126, 26.031578], [-80.375126, 26.02928], [-80.377126, 26.0316], [-80.377316, 26.028632], [-80.379726, 26.028442], [-80.377126, 26.027225], [-80.375126, 26.027869], [-80.369126, 26.027476], [-80.367126, 26.026104], [-80.362283, 26.025285], [-80.361409, 26.022159], [-80.359126, 26.021692], [-80.358265, 26.020442], [-80.360691, 26.018442], [-80.359706, 26.016442], [-80.360407, 26.014442], [-80.362158, 26.013474], [-80.363126, 26.011674], [-80.365126, 26.012676], [-80.367126, 26.011998], [-80.367445, 26.010442], [-80.369126, 26.009058], [-80.374371, 26.009197], [-80.377126, 26.010855], [-80.377961, 26.009277], [-80.379686, 26.008442], [-80.377524, 26.006442], [-80.378252, 26.005568], [-80.379126, 25.993834], [-80.381277, 25.994442], [-80.382009, 25.996442], [-80.380837, 26.000442], [-80.382333, 26.001235], [-80.383126, 26.002934], [-80.384468, 26.002442], [-80.384563, 26.000442], [-80.38557, 25.999998], [-80.387018, 26.000442], [-80.386463, 26.002442], [-80.389268, 26.002583], [-80.389783, 25.999099], [-80.390852, 25.998442], [-80.391126, 25.996679], [-80.391705, 25.998442], [-80.392802, 25.998766], [-80.393126, 26.001101], [-80.393345, 25.998661], [-80.396033, 25.993349], [-80.400028, 25.992442], [-80.396277, 25.991291], [-80.396716, 25.986032], [-80.399069, 25.984385], [-80.405769, 25.985085], [-80.40708, 25.984396], [-80.407242, 25.982442], [-80.40333, 25.978238], [-80.39276, 25.976808], [-80.393126, 25.974515], [-80.398229, 25.970442], [-80.393126, 25.968446], [-80.384706, 25.968862], [-80.383805, 25.965763], [-80.381808, 25.96376], [-80.376732, 25.962836], [-80.375126, 25.956946], [-80.372671, 25.959987], [-80.372382, 25.962442], [-80.370234, 25.96355], [-80.367781, 25.966442], [-80.361126, 25.966979], [-80.359126, 25.965568], [-80.357126, 25.967267], [-80.355126, 25.966831], [-80.354047, 25.956442], [-80.354945, 25.948442], [-80.356759, 25.948075], [-80.357003, 25.946319], [-80.358754, 25.94607], [-80.359001, 25.944317], [-80.362743, 25.944059], [-80.362998, 25.942314], [-80.364737, 25.942053], [-80.364996, 25.940311], [-80.366731, 25.940047], [-80.366993, 25.938309], [-80.368726, 25.938042], [-80.368991, 25.936307], [-80.37072, 25.936036], [-80.370989, 25.934305], [-80.373126, 25.934233], [-80.374495, 25.931811], [-80.376913, 25.930442], [-80.376234, 25.928442], [-80.378907, 25.926442], [-80.378976, 25.922292], [-80.380672, 25.921988], [-80.380893, 25.916442], [-80.382652, 25.915968], [-80.382964, 25.91228], [-80.384633, 25.911949], [-80.385126, 25.906023], [-80.387107, 25.906442], [-80.386168, 25.908442], [-80.387824, 25.909744], [-80.389126, 25.913079], [-80.390741, 25.908057], [-80.393525, 25.908043], [-80.39399, 25.909578], [-80.395583, 25.910442], [-80.39559, 25.912906], [-80.392801, 25.914442], [-80.392398, 25.918442], [-80.396113, 25.922442], [-80.396049, 25.925365], [-80.395095, 25.926442], [-80.397126, 25.930009], [-80.400405, 25.928442], [-80.39997, 25.926442], [-80.398005, 25.924442], [-80.39981, 25.922442], [-80.398433, 25.921135], [-80.39852, 25.919836], [-80.405126, 25.918443], [-80.407869, 25.920442], [-80.409126, 25.924553], [-80.411126, 25.921766], [-80.414319, 25.925249], [-80.41769, 25.925878], [-80.417126, 25.92771], [-80.412886, 25.928442], [-80.418772, 25.928796], [-80.42237, 25.931198], [-80.428317, 25.933251], [-80.429126, 25.939701], [-80.429729, 25.934442], [-80.429372, 25.932196], [-80.427658, 25.92991], [-80.425126, 25.929752], [-80.423471, 25.928097], [-80.421734, 25.927834], [-80.421355, 25.926213], [-80.419579, 25.925989], [-80.419126, 25.924184], [-80.415866, 25.923702], [-80.415453, 25.922115], [-80.413891, 25.921677], [-80.413475, 25.920093], [-80.411986, 25.919582], [-80.411126, 25.91711], [-80.409126, 25.917895], [-80.408167, 25.917401], [-80.403126, 25.910975], [-80.401126, 25.911959], [-80.400108, 25.91146], [-80.39823, 25.907338], [-80.394876, 25.906692], [-80.394385, 25.905183], [-80.392858, 25.90471], [-80.392341, 25.903227], [-80.390752, 25.902442], [-80.391126, 25.895872], [-80.39293, 25.896442], [-80.395126, 25.898937], [-80.397126, 25.897517], [-80.399126, 25.899013], [-80.402463, 25.898442], [-80.399929, 25.897639], [-80.399126, 25.8956], [-80.394165, 25.895403], [-80.393126, 25.893093], [-80.390842, 25.892442], [-80.391594, 25.890442], [-80.390832, 25.888442], [-80.390802, 25.878442], [-80.389882, 25.876442], [-80.39079, 25.874442], [-80.390762, 25.870442], [-80.390398, 25.86917], [-80.388764, 25.86808], [-80.388629, 25.842442], [-80.390507, 25.840442], [-80.39054, 25.838442], [-80.388582, 25.836442], [-80.38775, 25.818442], [-80.388439, 25.813755], [-80.390142, 25.812442], [-80.388156, 25.810442], [-80.387247, 25.796442], [-80.385259, 25.796309], [-80.385126, 25.79295], [-80.385126, 25.796761], [-80.386509, 25.798442], [-80.385561, 25.812442], [-80.386497, 25.816442], [-80.385823, 25.832442], [-80.385126, 25.834215], [-80.384067, 25.833501], [-80.383126, 25.829821], [-80.382624, 25.83794], [-80.380956, 25.838272], [-80.380425, 25.839741], [-80.373126, 25.840038], [-80.369126, 25.838488], [-80.367126, 25.833198], [-80.365126, 25.8345], [-80.363506, 25.832062], [-80.360835, 25.830733], [-80.363126, 25.829257], [-80.365126, 25.830325], [-80.367126, 25.82814], [-80.368697, 25.828871], [-80.369126, 25.830653], [-80.370061, 25.827377], [-80.376424, 25.826442], [-80.371126, 25.825184], [-80.366305, 25.825263], [-80.364897, 25.822442], [-80.36852, 25.822442], [-80.367767, 25.820442], [-80.363126, 25.81764], [-80.361126, 25.819323], [-80.360037, 25.818442], [-80.361704, 25.81702], [-80.361221, 25.814442], [-80.361866, 25.813182], [-80.363526, 25.812442], [-80.360721, 25.810442], [-80.355126, 25.810196], [-80.353442, 25.808442], [-80.353593, 25.804909], [-80.354672, 25.804442], [-80.353841, 25.802442], [-80.354299, 25.801615], [-80.359126, 25.799584], [-80.361126, 25.799679], [-80.36378, 25.797096], [-80.366878, 25.796442], [-80.36404, 25.795528], [-80.361126, 25.793323], [-80.359126, 25.793718], [-80.357529, 25.792442], [-80.357823, 25.790442], [-80.354858, 25.788174], [-80.354986, 25.786442], [-80.356801, 25.784442], [-80.361126, 25.783893], [-80.365391, 25.784442], [-80.369126, 25.789579], [-80.371475, 25.784442], [-80.375126, 25.782086], [-80.376135, 25.779451], [-80.377126, 25.778953], [-80.379126, 25.781108], [-80.382019, 25.781549], [-80.383126, 25.784002], [-80.384886, 25.784682], [-80.385126, 25.787653], [-80.385664, 25.784442], [-80.387126, 25.783595], [-80.393126, 25.783083], [-80.395126, 25.7849], [-80.397398, 25.784442], [-80.395581, 25.783987], [-80.395126, 25.782218], [-80.386414, 25.781154], [-80.385905, 25.778442], [-80.387679, 25.776442], [-80.387154, 25.770442], [-80.385406, 25.770162], [-80.385126, 25.768948], [-80.384487, 25.775803], [-80.382871, 25.776187], [-80.381126, 25.777908], [-80.373126, 25.777255], [-80.371126, 25.778622], [-80.369126, 25.777583], [-80.367817, 25.779133], [-80.364551, 25.779867], [-80.363126, 25.781622], [-80.355126, 25.781549], [-80.353126, 25.780686], [-80.351126, 25.781485], [-80.347126, 25.781457], [-80.338684, 25.780442], [-80.341892, 25.778442], [-80.339894, 25.776442], [-80.340206, 25.775522], [-80.34397, 25.774442], [-80.34399, 25.772442], [-80.351518, 25.768442], [-80.346315, 25.767253], [-80.345292, 25.764442], [-80.345961, 25.763277], [-80.348062, 25.762442], [-80.346292, 25.761276], [-80.342593, 25.760975], [-80.341126, 25.758611], [-80.338138, 25.75743], [-80.335721, 25.753847], [-80.335331, 25.752442], [-80.336418, 25.750442], [-80.34159, 25.748442], [-80.340727, 25.74684], [-80.337649, 25.745919], [-80.335126, 25.743466], [-80.333126, 25.743963], [-80.332127, 25.743441], [-80.327126, 25.738711], [-80.325125, 25.738443], [-80.324638, 25.736442], [-80.328599, 25.734442], [-80.329746, 25.732442], [-80.327126, 25.731214], [-80.321126, 25.731399], [-80.320282, 25.730442], [-80.319447, 25.726442], [-80.320364, 25.72168], [-80.325507, 25.716823], [-80.32597, 25.715286], [-80.329176, 25.714492], [-80.329486, 25.712442], [-80.329054, 25.712514], [-80.328985, 25.714301], [-80.324996, 25.714312], [-80.324406, 25.715722], [-80.321126, 25.717599], [-80.31943, 25.716138], [-80.319126, 25.714055], [-80.317675, 25.713892], [-80.317126, 25.709555], [-80.316952, 25.714616], [-80.318457, 25.716442], [-80.318736, 25.720442], [-80.317984, 25.728442], [-80.317126, 25.729781], [-80.311069, 25.732442], [-80.313126, 25.734346], [-80.317465, 25.734103], [-80.318074, 25.738442], [-80.317126, 25.742716], [-80.315126, 25.742538], [-80.313126, 25.745015], [-80.311126, 25.741846], [-80.309728, 25.745044], [-80.305737, 25.746442], [-80.303102, 25.748442], [-80.313126, 25.751873], [-80.313848, 25.754442], [-80.313396, 25.756442], [-80.307126, 25.76068], [-80.301477, 25.762442], [-80.302628, 25.76294], [-80.303154, 25.764442], [-80.301126, 25.767127], [-80.299746, 25.766442], [-80.299758, 25.764442], [-80.301039, 25.762442], [-80.29305, 25.760442], [-80.287126, 25.751382], [-80.28407, 25.758442], [-80.284485, 25.760442], [-80.283126, 25.761597], [-80.279126, 25.761092], [-80.269126, 25.756318], [-80.2678, 25.754442], [-80.26853, 25.752442], [-80.266551, 25.750442], [-80.265937, 25.748442], [-80.263126, 25.746604], [-80.260782, 25.746786], [-80.258477, 25.744442], [-80.261126, 25.740209], [-80.263126, 25.742089], [-80.264193, 25.739509], [-80.267052, 25.736368], [-80.271212, 25.734442], [-80.26661, 25.732958], [-80.264677, 25.730891], [-80.264642, 25.728442], [-80.265126, 25.726875], [-80.267804, 25.726442], [-80.271126, 25.71973], [-80.269126, 25.719656], [-80.267126, 25.721036], [-80.263448, 25.72012], [-80.261126, 25.717541], [-80.258905, 25.722221], [-80.257465, 25.722781], [-80.255855, 25.721713], [-80.253126, 25.717694], [-80.249468, 25.724784], [-80.247032, 25.724536], [-80.245126, 25.723322], [-80.243126, 25.724856], [-80.235126, 25.725414], [-80.232457, 25.727773], [-80.231457, 25.730773], [-80.229126, 25.731092], [-80.227126, 25.732869], [-80.224025, 25.733341], [-80.22338, 25.734696], [-80.221126, 25.732884], [-80.218041, 25.733357], [-80.215505, 25.736821], [-80.212244, 25.73756], [-80.210235, 25.739551], [-80.209318, 25.744634], [-80.205726, 25.745042], [-80.205126, 25.746779], [-80.202955, 25.746613], [-80.202595, 25.744973], [-80.201126, 25.744707], [-80.177126, 25.745108], [-80.169646, 25.737922], [-80.167373, 25.736195], [-80.165469, 25.736099], [-80.165126, 25.734694], [-80.164343, 25.736442], [-80.166278, 25.73729], [-80.169111, 25.742457], [-80.171543, 25.744025], [-80.173126, 25.747144], [-80.199303, 25.748265], [-80.197761, 25.749077], [-80.197335, 25.750651], [-80.195857, 25.751173], [-80.195337, 25.752653], [-80.193737, 25.753053], [-80.193329, 25.754645], [-80.187831, 25.755147], [-80.187381, 25.764442], [-80.18645, 25.763118], [-80.183802, 25.763118], [-80.183367, 25.766684], [-80.181592, 25.768442], [-80.183352, 25.770216], [-80.18364, 25.773928], [-80.185126, 25.774731], [-80.181126, 25.774873], [-80.180504, 25.773064], [-80.179126, 25.772753], [-80.171126, 25.772646], [-80.169848, 25.76972], [-80.165126, 25.768766], [-80.161784, 25.7691], [-80.161126, 25.770772], [-80.160385, 25.769183], [-80.159126, 25.768812], [-80.155873, 25.769189], [-80.154854, 25.770714], [-80.151126, 25.770721], [-80.150491, 25.769077], [-80.149126, 25.768759], [-80.145526, 25.768842], [-80.144129, 25.769445], [-80.143126, 25.772758], [-80.142413, 25.771155], [-80.140723, 25.770442], [-80.140109, 25.767459], [-80.136777, 25.76679], [-80.135126, 25.765043], [-80.132254, 25.76557], [-80.129892, 25.768442], [-80.131715, 25.770442], [-80.129723, 25.773039], [-80.129794, 25.780442], [-80.130988, 25.784304], [-80.130069, 25.794442], [-80.131892, 25.795676], [-80.13253, 25.803846], [-80.131625, 25.804941], [-80.1292, 25.804442], [-80.127126, 25.801641], [-80.125126, 25.802867], [-80.124624, 25.804442], [-80.122288, 25.806442], [-80.121434, 25.81275], [-80.119833, 25.814442], [-80.121628, 25.816442], [-80.119607, 25.820442], [-80.11937, 25.842442], [-80.117691, 25.843007], [-80.117408, 25.844442], [-80.117619, 25.849949], [-80.119337, 25.850442], [-80.117657, 25.850973], [-80.117318, 25.860442], [-80.117511, 25.862057], [-80.119302, 25.862442], [-80.119267, 25.888301], [-80.119424, 25.890144], [-80.12125, 25.890442], [-80.121235, 25.906442], [-80.119383, 25.9067], [-80.119255, 25.908442], [-80.11921, 25.942442], [-80.1173, 25.942616], [-80.117211, 25.980442], [-80.115305, 25.980622], [-80.115305, 25.984262], [-80.117209, 25.984442], [-80.115294, 25.98461], [-80.11522, 26.004442], [-80.113324, 26.00464], [-80.113247, 26.038442], [-80.11138, 26.038696], [-80.111263, 26.052442], [-80.109423, 26.052739], [-80.109274, 26.054442], [-80.109468, 26.0601], [-80.111231, 26.060337], [-80.112061, 26.062442], [-80.111693, 26.071009], [-80.111126, 26.074951], [-80.108719, 26.076442], [-80.109729, 26.077839], [-80.109354, 26.080671], [-80.10797, 26.081286], [-80.107548, 26.082442], [-80.108451, 26.092442], [-80.107323, 26.094639], [-80.10403, 26.095346], [-80.103578, 26.096442], [-80.105349, 26.098219], [-80.105438, 26.100442], [-80.103984, 26.1013], [-80.1035, 26.102816], [-80.103429, 26.120442], [-80.101814, 26.12113], [-80.10147, 26.122442], [-80.101492, 26.142442], [-80.099541, 26.144442], [-80.099841, 26.156442], [-80.098155, 26.158442], [-80.097637, 26.166442], [-80.096193, 26.170442], [-80.095635, 26.184442], [-80.093654, 26.186442], [-80.093732, 26.198442], [-80.092209, 26.200442], [-80.092365, 26.215203], [-80.093126, 26.216005], [-80.096002, 26.209318], [-80.097126, 26.208555], [-80.098487, 26.209081], [-80.099323, 26.210442], [-80.097123, 26.218442], [-80.099651, 26.222442], [-80.097126, 26.223548], [-80.095126, 26.223058], [-80.092543, 26.220442], [-80.091126, 26.21739], [-80.09048, 26.220442], [-80.088624, 26.222442], [-80.088148, 26.238442], [-80.086846, 26.240442], [-80.087126, 26.243196], [-80.091126, 26.24017], [-80.093126, 26.23958], [-80.093968, 26.240442], [-80.093898, 26.242442], [-80.095653, 26.244442], [-80.096364, 26.248442], [-80.094491, 26.250442], [-80.097491, 26.252077], [-80.09779, 26.253778], [-80.097443, 26.254759], [-80.095126, 26.255179], [-80.092436, 26.257752], [-80.090733, 26.262442], [-80.092491, 26.265077], [-80.095126, 26.264879], [-80.09597, 26.268442], [-80.09531, 26.270626], [-80.091126, 26.273113], [-80.089004, 26.276442], [-80.091665, 26.278442], [-80.091761, 26.280442], [-80.093329, 26.282239], [-80.095126, 26.287647], [-80.096142, 26.285458], [-80.099126, 26.282858], [-80.105126, 26.28533], [-80.10915, 26.284418], [-80.109431, 26.286747], [-80.107126, 26.288127], [-80.105126, 26.287302], [-80.101015, 26.290442], [-80.105126, 26.292951], [-80.106347, 26.291663], [-80.107974, 26.292442], [-80.103884, 26.296442], [-80.103489, 26.298805], [-80.099126, 26.301332], [-80.093126, 26.302645], [-80.090729, 26.304442], [-80.093126, 26.307106], [-80.097126, 26.307032], [-80.098591, 26.308977], [-80.099744, 26.312442], [-80.10173, 26.314442], [-80.099131, 26.318442], [-80.103126, 26.321593], [-80.107126, 26.323349], [-80.111126, 26.321627], [-80.115126, 26.323309], [-80.116418, 26.328442], [-80.116102, 26.348442], [-80.115126, 26.350071], [-80.112356, 26.350442], [-80.115126, 26.350998], [-80.116388, 26.354442], [-80.118658, 26.356442], [-80.118438, 26.365754], [-80.117095, 26.366442], [-80.116463, 26.368442], [-80.117126, 26.372406]]], "type": "Polygon"}, "properties": {"color": "#bf4040", "contour": 30, "fill": "#bf4040", "fill-opacity": 0.33, "fillColor": "#bf4040", "fillOpacity": 0.33, "metric": "time", "opacity": 0.33}, "type": "Feature"}], "properties": {"name": "Main Hub \u2013 Miami"}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_8eef0d644b0ea552c7bd45faf7c0b02b.bindTooltip(
+                `<div>
+                     Main Hub – Miami
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_8eef0d644b0ea552c7bd45faf7c0b02b.addTo(feature_group_18a8ca063851cdb0d66d8f6716e9d8f8);
+        
+    
+        function geo_json_5d7ae532d4e1adbe439e5060ebd462d2_styler(feature) {
+            switch(feature.properties.fillColor) {
+                default:
+                    return {"color": "#3498DB", "fillColor": "#3498DB", "fillOpacity": 0.25, "weight": 2};
+            }
+        }
+        function geo_json_5d7ae532d4e1adbe439e5060ebd462d2_highlighter(feature) {
+            switch(feature.properties.fillColor) {
+                default:
+                    return {"weight": 3};
+            }
+        }
+
+        function geo_json_5d7ae532d4e1adbe439e5060ebd462d2_onEachFeature(feature, layer) {
+
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_5d7ae532d4e1adbe439e5060ebd462d2.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_5d7ae532d4e1adbe439e5060ebd462d2_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_5d7ae532d4e1adbe439e5060ebd462d2 = L.geoJson(null, {
+                onEachFeature: geo_json_5d7ae532d4e1adbe439e5060ebd462d2_onEachFeature,
+            
+                style: geo_json_5d7ae532d4e1adbe439e5060ebd462d2_styler,
+            ...{
+}
+        });
+
+        function geo_json_5d7ae532d4e1adbe439e5060ebd462d2_add (data) {
+            geo_json_5d7ae532d4e1adbe439e5060ebd462d2
+                .addData(data);
+        }
+            geo_json_5d7ae532d4e1adbe439e5060ebd462d2_add({"features": [{"geometry": {"coordinates": [[[-80.2948, 26.194697], [-80.295148, 26.189446], [-80.29704, 26.189338], [-80.299263, 26.187561], [-80.303208, 26.183506], [-80.30357, 26.181868], [-80.307489, 26.181787], [-80.318356, 26.170654], [-80.321064, 26.169363], [-80.322399, 26.166697], [-80.324695, 26.164993], [-80.327766, 26.164064], [-80.336497, 26.154795], [-80.337909, 26.154207], [-80.340405, 26.150703], [-80.343991, 26.148289], [-80.344417, 26.143098], [-80.346044, 26.139098], [-80.345243, 26.127541], [-80.345661, 26.125098], [-80.347109, 26.123407], [-80.3508, 26.123227], [-80.3528, 26.125046], [-80.354866, 26.125032], [-80.3588, 26.128028], [-80.3668, 26.128738], [-80.367546, 26.130352], [-80.3688, 26.130725], [-80.3768, 26.130657], [-80.3788, 26.132687], [-80.3848, 26.132374], [-80.3868, 26.134645], [-80.3928, 26.134612], [-80.3948, 26.13659], [-80.3988, 26.136565], [-80.4008, 26.138439], [-80.4088, 26.138471], [-80.4108, 26.140433], [-80.4168, 26.140369], [-80.4188, 26.142312], [-80.4268, 26.142187], [-80.42726, 26.141558], [-80.4268, 26.140009], [-80.421793, 26.139098], [-80.4208, 26.135688], [-80.419063, 26.137362], [-80.4148, 26.137874], [-80.407018, 26.135098], [-80.406355, 26.133098], [-80.403979, 26.131919], [-80.403484, 26.128414], [-80.401753, 26.127098], [-80.402486, 26.125098], [-80.401488, 26.12441], [-80.397466, 26.124432], [-80.396681, 26.122979], [-80.396657, 26.125241], [-80.397844, 26.126054], [-80.399121, 26.129098], [-80.397616, 26.131914], [-80.3968, 26.132082], [-80.3908, 26.132021], [-80.3868, 26.129858], [-80.3808, 26.12934], [-80.380042, 26.127856], [-80.3708, 26.127246], [-80.370425, 26.125473], [-80.364639, 26.125259], [-80.363771, 26.123098], [-80.3648, 26.122151], [-80.3668, 26.123658], [-80.3688, 26.121859], [-80.3708, 26.122403], [-80.373918, 26.118216], [-80.3808, 26.117911], [-80.382446, 26.116744], [-80.3828, 26.115032], [-80.3848, 26.11694], [-80.385197, 26.112701], [-80.383616, 26.109098], [-80.386458, 26.108756], [-80.3888, 26.106511], [-80.3904, 26.109098], [-80.393503, 26.109801], [-80.394143, 26.106441], [-80.396306, 26.105592], [-80.397491, 26.109098], [-80.40171, 26.110188], [-80.402224, 26.113098], [-80.400405, 26.115098], [-80.400205, 26.116503], [-80.396815, 26.117098], [-80.402025, 26.117873], [-80.403279, 26.121098], [-80.4048, 26.12254], [-80.405557, 26.115855], [-80.408511, 26.115098], [-80.4048, 26.114292], [-80.403992, 26.113098], [-80.4048, 26.110834], [-80.406543, 26.110841], [-80.408728, 26.109098], [-80.40785, 26.107098], [-80.4017, 26.106198], [-80.401164, 26.104734], [-80.399866, 26.104032], [-80.39892, 26.100978], [-80.395916, 26.099982], [-80.394327, 26.097098], [-80.394366, 26.094664], [-80.397271, 26.093569], [-80.396871, 26.091098], [-80.397488, 26.089786], [-80.399073, 26.089098], [-80.396412, 26.085486], [-80.39694, 26.082958], [-80.394728, 26.08117], [-80.394013, 26.077098], [-80.3948, 26.076317], [-80.397321, 26.076577], [-80.397649, 26.080249], [-80.401555, 26.082343], [-80.406668, 26.08723], [-80.408711, 26.087187], [-80.4088, 26.088546], [-80.408927, 26.086971], [-80.40646, 26.083098], [-80.406836, 26.079062], [-80.405776, 26.080074], [-80.404037, 26.079861], [-80.402664, 26.079234], [-80.401893, 26.077098], [-80.4028, 26.07605], [-80.405587, 26.075885], [-80.4068, 26.074093], [-80.414297, 26.073098], [-80.412876, 26.073022], [-80.4108, 26.071399], [-80.4088, 26.072461], [-80.4068, 26.069658], [-80.406477, 26.071098], [-80.4048, 26.072364], [-80.403446, 26.068452], [-80.400235, 26.067098], [-80.401333, 26.065098], [-80.399735, 26.063098], [-80.4028, 26.062309], [-80.4168, 26.062632], [-80.4188, 26.061822], [-80.4208, 26.062593], [-80.4268, 26.061774], [-80.4288, 26.062474], [-80.430355, 26.061098], [-80.428082, 26.059098], [-80.4268, 26.051579], [-80.4248, 26.052672], [-80.424367, 26.054665], [-80.422562, 26.05486], [-80.4208, 26.056637], [-80.4168, 26.052519], [-80.4148, 26.054308], [-80.413367, 26.053098], [-80.41199, 26.045098], [-80.413752, 26.043098], [-80.413665, 26.037098], [-80.415744, 26.033098], [-80.414494, 26.030792], [-80.4188, 26.030387], [-80.4208, 26.033163], [-80.4228, 26.033783], [-80.424109, 26.030407], [-80.431267, 26.030631], [-80.431774, 26.041098], [-80.4308, 26.042613], [-80.4288, 26.04279], [-80.42836, 26.043538], [-80.428884, 26.045098], [-80.4308, 26.045595], [-80.432184, 26.047098], [-80.4328, 26.056048], [-80.433445, 26.051743], [-80.43498, 26.051098], [-80.434126, 26.047098], [-80.435556, 26.045098], [-80.434749, 26.039098], [-80.437598, 26.037098], [-80.4368, 26.03595], [-80.4348, 26.036261], [-80.433848, 26.035098], [-80.434306, 26.017098], [-80.439596, 26.015894], [-80.440077, 26.013098], [-80.439463, 26.008435], [-80.4348, 26.007884], [-80.43444, 26.007098], [-80.434547, 25.971098], [-80.434294, 25.969604], [-80.432588, 25.969098], [-80.432663, 25.958961], [-80.437068, 25.959098], [-80.437755, 25.993098], [-80.439925, 25.995098], [-80.4408, 26.000011], [-80.4448, 25.994701], [-80.445467, 25.991765], [-80.4468, 25.954836], [-80.447353, 25.956545], [-80.448989, 25.956909], [-80.449386, 25.958512], [-80.451002, 25.958896], [-80.451422, 25.960476], [-80.45302, 25.960878], [-80.453512, 25.964386], [-80.455044, 25.964854], [-80.455567, 25.966331], [-80.457067, 25.966831], [-80.457631, 25.968267], [-80.459092, 25.968806], [-80.467973, 25.977925], [-80.472268, 25.98163], [-80.475687, 25.981985], [-80.476579, 25.981319], [-80.476229, 25.982527], [-80.477413, 25.983098], [-80.476841, 25.981098], [-80.475232, 25.978665], [-80.472187, 25.977711], [-80.461909, 25.965989], [-80.46052, 25.965378], [-80.459996, 25.963902], [-80.458546, 25.963352], [-80.458052, 25.959846], [-80.456566, 25.959332], [-80.456114, 25.957784], [-80.454587, 25.957311], [-80.454185, 25.955713], [-80.452604, 25.955294], [-80.452234, 25.953664], [-80.450617, 25.953281], [-80.450256, 25.949642], [-80.448629, 25.949269], [-80.448302, 25.947596], [-80.446641, 25.947257], [-80.446335, 25.945563], [-80.444649, 25.945249], [-80.444577, 25.941098], [-80.446328, 25.940626], [-80.446645, 25.938943], [-80.448305, 25.938603], [-80.448638, 25.936936], [-80.450273, 25.936571], [-80.450647, 25.932945], [-80.452335, 25.932633], [-80.452632, 25.93093], [-80.454197, 25.930495], [-80.454611, 25.928909], [-80.456159, 25.928457], [-80.456601, 25.926899], [-80.458105, 25.926403], [-80.458589, 25.924887], [-80.460042, 25.924341], [-80.460577, 25.922875], [-80.465794, 25.918092], [-80.46661, 25.914908], [-80.469696, 25.913994], [-80.470599, 25.910897], [-80.472186, 25.910484], [-80.4728, 25.908141], [-80.4848, 25.89453], [-80.485913, 25.895098], [-80.4868, 25.903092], [-80.488401, 25.888699], [-80.489224, 25.888674], [-80.4948, 25.894141], [-80.502464, 25.893098], [-80.496154, 25.891744], [-80.488303, 25.883098], [-80.4902, 25.881098], [-80.490312, 25.87861], [-80.492019, 25.877098], [-80.491815, 25.873098], [-80.493255, 25.870643], [-80.490234, 25.870532], [-80.48966, 25.875098], [-80.487971, 25.876269], [-80.487211, 25.879509], [-80.486378, 25.879098], [-80.486429, 25.849098], [-80.484386, 25.847512], [-80.484186, 25.845712], [-80.483881, 25.819098], [-80.48458, 25.817098], [-80.484595, 25.807098], [-80.483791, 25.805098], [-80.483769, 25.799098], [-80.484609, 25.797098], [-80.48462, 25.787098], [-80.484466, 25.785432], [-80.482768, 25.78513], [-80.482625, 25.783098], [-80.482743, 25.781041], [-80.484473, 25.780771], [-80.4848, 25.77636], [-80.488496, 25.772794], [-80.490005, 25.772303], [-80.490554, 25.770852], [-80.492134, 25.770432], [-80.492593, 25.768891], [-80.496256, 25.768554], [-80.496633, 25.766931], [-80.498331, 25.766629], [-80.498652, 25.76495], [-80.500379, 25.764677], [-80.5008, 25.762926], [-80.596214, 25.762512], [-80.624139, 25.761098], [-80.6068, 25.75991], [-80.6048, 25.75804], [-80.6028, 25.759814], [-80.600324, 25.759574], [-80.5988, 25.757969], [-80.5968, 25.759701], [-80.5828, 25.759537], [-80.5808, 25.757653], [-80.5788, 25.759509], [-80.5488, 25.759366], [-80.54821, 25.753688], [-80.5468, 25.750723], [-80.54539, 25.753688], [-80.5448, 25.759354], [-80.5008, 25.75927], [-80.50045, 25.745098], [-80.500101, 25.743797], [-80.498405, 25.743098], [-80.497943, 25.735955], [-80.4968, 25.732731], [-80.495657, 25.735955], [-80.495007, 25.747305], [-80.4868, 25.748138], [-80.48584, 25.749098], [-80.485956, 25.751098], [-80.482689, 25.751209], [-80.482587, 25.719098], [-80.482371, 25.717527], [-80.48057, 25.717098], [-80.4808, 25.715333], [-80.482183, 25.714481], [-80.489502, 25.7138], [-80.488169, 25.709098], [-80.488268, 25.705098], [-80.490784, 25.703098], [-80.4868, 25.701809], [-80.483052, 25.70535], [-80.4808, 25.705542], [-80.480529, 25.691098], [-80.493453, 25.690445], [-80.4948, 25.694072], [-80.496035, 25.691098], [-80.4928, 25.687668], [-80.480515, 25.687098], [-80.480502, 25.683098], [-80.482176, 25.682474], [-80.482488, 25.681098], [-80.482565, 25.672863], [-80.485211, 25.672687], [-80.489607, 25.673905], [-80.495714, 25.671098], [-80.49419, 25.669098], [-80.494919, 25.667098], [-80.49281, 25.665098], [-80.489194, 25.662704], [-80.4848, 25.661673], [-80.48249, 25.659408], [-80.4828, 25.65856], [-80.487638, 25.657098], [-80.482493, 25.655405], [-80.482474, 25.652772], [-80.4888, 25.65201], [-80.490546, 25.651098], [-80.487918, 25.64998], [-80.4868, 25.648343], [-80.482441, 25.647457], [-80.481508, 25.643098], [-80.4848, 25.638395], [-80.4928, 25.638135], [-80.4948, 25.639654], [-80.498205, 25.639693], [-80.4988, 25.640765], [-80.502736, 25.639098], [-80.503725, 25.637098], [-80.4988, 25.636575], [-80.496952, 25.634946], [-80.4968, 25.633774], [-80.4948, 25.636166], [-80.493597, 25.635098], [-80.4928, 25.631804], [-80.4908, 25.6323], [-80.4868, 25.62859], [-80.483963, 25.627934], [-80.482232, 25.623098], [-80.485764, 25.621098], [-80.4828, 25.6205], [-80.481172, 25.619098], [-80.481666, 25.617098], [-80.4808, 25.615201], [-80.47935, 25.614548], [-80.47906, 25.613098], [-80.480126, 25.609098], [-80.4788, 25.607652], [-80.478108, 25.609098], [-80.478006, 25.616304], [-80.475401, 25.617098], [-80.4768, 25.617377], [-80.47798, 25.619098], [-80.477095, 25.635392], [-80.4748, 25.637939], [-80.469455, 25.639098], [-80.4748, 25.640104], [-80.477654, 25.642244], [-80.478543, 25.647098], [-80.478095, 25.651098], [-80.479857, 25.653098], [-80.479211, 25.659098], [-80.478235, 25.659663], [-80.4768, 25.658211], [-80.472976, 25.661098], [-80.4788, 25.662457], [-80.479069, 25.667367], [-80.478385, 25.667513], [-80.4768, 25.664419], [-80.475284, 25.667582], [-80.4708, 25.669052], [-80.4628, 25.667446], [-80.459876, 25.666022], [-80.459221, 25.663519], [-80.462283, 25.661098], [-80.45398, 25.657918], [-80.4508, 25.657547], [-80.4508, 25.65684], [-80.458327, 25.656625], [-80.463112, 25.655098], [-80.458277, 25.653098], [-80.458755, 25.651098], [-80.457804, 25.649098], [-80.459332, 25.647098], [-80.457565, 25.645098], [-80.457472, 25.643098], [-80.456306, 25.641592], [-80.4568, 25.640768], [-80.4608, 25.640398], [-80.461978, 25.639098], [-80.461603, 25.636295], [-80.458758, 25.635098], [-80.460115, 25.634413], [-80.459634, 25.630264], [-80.456415, 25.629098], [-80.456531, 25.626829], [-80.458434, 25.627098], [-80.4588, 25.627872], [-80.461582, 25.625098], [-80.459977, 25.623921], [-80.456266, 25.623098], [-80.4568, 25.622484], [-80.4628, 25.622374], [-80.463225, 25.621098], [-80.4628, 25.620098], [-80.456361, 25.619537], [-80.453619, 25.616279], [-80.4508, 25.615293], [-80.448497, 25.613401], [-80.4488, 25.612598], [-80.460542, 25.611098], [-80.458791, 25.609098], [-80.4588, 25.606953], [-80.448457, 25.605441], [-80.450442, 25.603098], [-80.448383, 25.601515], [-80.449843, 25.599098], [-80.448172, 25.597098], [-80.4488, 25.596462], [-80.450077, 25.597098], [-80.449937, 25.597961], [-80.451431, 25.598467], [-80.4528, 25.601451], [-80.4548, 25.600561], [-80.4552, 25.597498], [-80.457329, 25.595627], [-80.460335, 25.595563], [-80.4608, 25.596568], [-80.461322, 25.595098], [-80.457492, 25.594406], [-80.4568, 25.590321], [-80.4548, 25.591218], [-80.4528, 25.593827], [-80.45193, 25.593098], [-80.451829, 25.591098], [-80.4508, 25.590569], [-80.449137, 25.591098], [-80.450541, 25.591357], [-80.450429, 25.593098], [-80.4488, 25.594552], [-80.447171, 25.593098], [-80.447222, 25.59152], [-80.44861, 25.591098], [-80.447467, 25.590431], [-80.446255, 25.590553], [-80.4428, 25.593631], [-80.439467, 25.590431], [-80.438153, 25.590451], [-80.4348, 25.593526], [-80.434288, 25.590586], [-80.437055, 25.589353], [-80.43749, 25.587788], [-80.441458, 25.587098], [-80.440759, 25.583098], [-80.442255, 25.582553], [-80.447428, 25.58247], [-80.4508, 25.583904], [-80.4528, 25.58222], [-80.455529, 25.583827], [-80.4568, 25.583782], [-80.4588, 25.581947], [-80.4608, 25.582626], [-80.4628, 25.581945], [-80.46292, 25.577098], [-80.4608, 25.578511], [-80.4568, 25.578439], [-80.455462, 25.577098], [-80.4548, 25.573066], [-80.4508, 25.579917], [-80.4488, 25.574493], [-80.4468, 25.5762], [-80.4448, 25.575229], [-80.4428, 25.575756], [-80.4408, 25.573042], [-80.4388, 25.576728], [-80.4368, 25.576512], [-80.435182, 25.57948], [-80.434453, 25.579445], [-80.433443, 25.576455], [-80.430433, 25.575465], [-80.430381, 25.574679], [-80.431626, 25.573924], [-80.4328, 25.571174], [-80.436265, 25.569098], [-80.438293, 25.566591], [-80.441638, 25.565098], [-80.437921, 25.563977], [-80.4368, 25.562648], [-80.4348, 25.56378], [-80.431543, 25.562355], [-80.430883, 25.559098], [-80.429398, 25.557098], [-80.429979, 25.555098], [-80.429077, 25.553098], [-80.429739, 25.552037], [-80.43324, 25.551098], [-80.429781, 25.550117], [-80.4288, 25.547621], [-80.425685, 25.549983], [-80.423978, 25.54992], [-80.422716, 25.549098], [-80.422387, 25.547098], [-80.4228, 25.544566], [-80.4248, 25.544943], [-80.4288, 25.543624], [-80.4288, 25.54272], [-80.423755, 25.542143], [-80.422863, 25.541098], [-80.423767, 25.540065], [-80.4268, 25.538192], [-80.4288, 25.539644], [-80.429654, 25.537952], [-80.432493, 25.537098], [-80.4288, 25.533554], [-80.4268, 25.53412], [-80.4248, 25.532801], [-80.423416, 25.535714], [-80.422002, 25.535098], [-80.422171, 25.530469], [-80.4288, 25.529602], [-80.430595, 25.526893], [-80.433616, 25.525098], [-80.429677, 25.523098], [-80.431969, 25.521098], [-80.429864, 25.519098], [-80.432809, 25.515098], [-80.43256, 25.513338], [-80.430758, 25.513056], [-80.429024, 25.515322], [-80.4268, 25.515244], [-80.425908, 25.512206], [-80.427363, 25.509098], [-80.43201, 25.507098], [-80.430293, 25.505098], [-80.433925, 25.503098], [-80.434438, 25.500736], [-80.435617, 25.501098], [-80.435507, 25.503098], [-80.4368, 25.50527], [-80.439513, 25.501811], [-80.444278, 25.499098], [-80.4408, 25.49741], [-80.438477, 25.497421], [-80.4368, 25.494118], [-80.4348, 25.496022], [-80.43254, 25.495358], [-80.432985, 25.492913], [-80.4288, 25.489991], [-80.4268, 25.49022], [-80.426591, 25.488889], [-80.428331, 25.488629], [-80.428287, 25.487098], [-80.430102, 25.4844], [-80.433611, 25.483909], [-80.4368, 25.480726], [-80.4408, 25.47969], [-80.4428, 25.480257], [-80.4448, 25.483158], [-80.4468, 25.478365], [-80.451408, 25.477098], [-80.4468, 25.476239], [-80.446348, 25.474646], [-80.4488, 25.474382], [-80.452028, 25.470326], [-80.455143, 25.469441], [-80.455703, 25.468001], [-80.457032, 25.46733], [-80.457284, 25.465582], [-80.458931, 25.465229], [-80.458996, 25.463294], [-80.4628, 25.463317], [-80.462831, 25.461129], [-80.463754, 25.461098], [-80.462785, 25.461098], [-80.462689, 25.462987], [-80.458714, 25.463012], [-80.458362, 25.46466], [-80.456626, 25.464924], [-80.456116, 25.466414], [-80.4545, 25.466798], [-80.453766, 25.468064], [-80.450474, 25.468772], [-80.447736, 25.472034], [-80.4448, 25.472396], [-80.443707, 25.474005], [-80.4408, 25.475316], [-80.4388, 25.475122], [-80.436666, 25.476964], [-80.433691, 25.477989], [-80.431492, 25.48179], [-80.4288, 25.482077], [-80.427688, 25.483986], [-80.421329, 25.489627], [-80.417074, 25.491098], [-80.4168, 25.49566], [-80.4148, 25.49581], [-80.414132, 25.495098], [-80.4154, 25.493098], [-80.415462, 25.491098], [-80.413686, 25.489098], [-80.4128, 25.485038], [-80.412089, 25.489098], [-80.409129, 25.495427], [-80.4008, 25.498324], [-80.400632, 25.50093], [-80.396837, 25.501098], [-80.397895, 25.502003], [-80.401689, 25.502209], [-80.404015, 25.503883], [-80.406008, 25.50789], [-80.409294, 25.509098], [-80.408414, 25.511484], [-80.406957, 25.511098], [-80.4048, 25.507845], [-80.4008, 25.513523], [-80.399196, 25.509098], [-80.399683, 25.507098], [-80.397448, 25.505098], [-80.3968, 25.501819], [-80.396758, 25.503056], [-80.392717, 25.507098], [-80.394053, 25.509845], [-80.395548, 25.51035], [-80.395441, 25.511739], [-80.393948, 25.51195], [-80.390242, 25.509656], [-80.389794, 25.507098], [-80.3888, 25.506643], [-80.38712, 25.513418], [-80.3828, 25.513575], [-80.3821, 25.511098], [-80.382695, 25.507098], [-80.3808, 25.506307], [-80.379706, 25.509098], [-80.379119, 25.515417], [-80.3748, 25.515708], [-80.374463, 25.507098], [-80.370983, 25.504915], [-80.3708, 25.503807], [-80.370648, 25.504946], [-80.3688, 25.506607], [-80.3668, 25.506009], [-80.364107, 25.503098], [-80.3668, 25.501452], [-80.3668, 25.499918], [-80.364436, 25.499098], [-80.365962, 25.497098], [-80.363417, 25.495098], [-80.3636, 25.493898], [-80.364876, 25.493098], [-80.3628, 25.490136], [-80.361232, 25.497098], [-80.361479, 25.505098], [-80.358583, 25.507098], [-80.363199, 25.508699], [-80.36324, 25.517098], [-80.356117, 25.519098], [-80.357858, 25.52404], [-80.363078, 25.527376], [-80.3588, 25.5279], [-80.3528, 25.530101], [-80.3508, 25.529254], [-80.3468, 25.530478], [-80.3448, 25.533105], [-80.3408, 25.535784], [-80.329746, 25.537098], [-80.3308, 25.541014], [-80.331413, 25.539711], [-80.3348, 25.540093], [-80.33548, 25.537778], [-80.3368, 25.537541], [-80.345164, 25.538734], [-80.345696, 25.549098], [-80.343973, 25.551098], [-80.347354, 25.551652], [-80.347916, 25.547098], [-80.3488, 25.546238], [-80.3508, 25.545887], [-80.3528, 25.546883], [-80.3548, 25.546421], [-80.355481, 25.547779], [-80.3528, 25.547953], [-80.35151, 25.549808], [-80.3508, 25.553541], [-80.3328, 25.553916], [-80.331923, 25.553098], [-80.3328, 25.552022], [-80.338778, 25.551098], [-80.332363, 25.549535], [-80.3308, 25.544671], [-80.329342, 25.55764], [-80.327891, 25.561098], [-80.325688, 25.563098], [-80.32602, 25.565098], [-80.32428, 25.567098], [-80.323461, 25.571759], [-80.317721, 25.577098], [-80.31745, 25.583098], [-80.315639, 25.585098], [-80.316305, 25.589098], [-80.31825, 25.591098], [-80.317257, 25.591555], [-80.31717, 25.595098], [-80.315415, 25.595713], [-80.3148, 25.597401], [-80.311497, 25.597795], [-80.311029, 25.599327], [-80.309566, 25.599864], [-80.309046, 25.607098], [-80.307316, 25.607614], [-80.30698, 25.609278], [-80.305419, 25.609717], [-80.305419, 25.612479], [-80.309025, 25.613098], [-80.30725, 25.613548], [-80.307025, 25.615098], [-80.307239, 25.620659], [-80.30894, 25.620958], [-80.309001, 25.622897], [-80.307217, 25.623515], [-80.306999, 25.627098], [-80.304659, 25.627239], [-80.304326, 25.625572], [-80.299039, 25.625337], [-80.297296, 25.625594], [-80.2968, 25.629328], [-80.296306, 25.627592], [-80.287471, 25.627769], [-80.287365, 25.633098], [-80.289103, 25.634795], [-80.288962, 25.63926], [-80.287259, 25.639557], [-80.2868, 25.641318], [-80.279337, 25.641635], [-80.279337, 25.644561], [-80.281066, 25.645098], [-80.2808, 25.647345], [-80.2708, 25.647528], [-80.265669, 25.651967], [-80.265669, 25.654229], [-80.2668, 25.654664], [-80.274978, 25.65492], [-80.275408, 25.65849], [-80.277171, 25.659098], [-80.276965, 25.661263], [-80.274543, 25.661355], [-80.273907, 25.659991], [-80.2708, 25.658401], [-80.26953, 25.659098], [-80.269642, 25.661098], [-80.271693, 25.664205], [-80.2748, 25.664794], [-80.275284, 25.666614], [-80.276976, 25.667098], [-80.275182, 25.66748], [-80.274938, 25.669236], [-80.2733, 25.669598], [-80.2728, 25.671355], [-80.272175, 25.669723], [-80.2708, 25.66941], [-80.269425, 25.669723], [-80.268996, 25.671294], [-80.267384, 25.671682], [-80.267057, 25.679356], [-80.264268, 25.67963], [-80.2628, 25.678477], [-80.260915, 25.681098], [-80.257945, 25.682243], [-80.257165, 25.685098], [-80.255416, 25.685714], [-80.25499, 25.687288], [-80.249478, 25.687776], [-80.249826, 25.691098], [-80.247484, 25.693098], [-80.247522, 25.695098], [-80.248975, 25.697273], [-80.243455, 25.697753], [-80.243128, 25.699098], [-80.243464, 25.702434], [-80.245155, 25.703098], [-80.245103, 25.709098], [-80.245406, 25.710492], [-80.246971, 25.710927], [-80.247017, 25.713315], [-80.245237, 25.713535], [-80.244945, 25.715243], [-80.243249, 25.715547], [-80.243032, 25.719098], [-80.241257, 25.719555], [-80.240935, 25.723233], [-80.237198, 25.723496], [-80.2368, 25.725272], [-80.23129, 25.725588], [-80.231016, 25.729098], [-80.229194, 25.729492], [-80.228931, 25.731229], [-80.227226, 25.731524], [-80.2268, 25.7333], [-80.2208, 25.733316], [-80.220264, 25.731634], [-80.217336, 25.731634], [-80.216976, 25.733274], [-80.215384, 25.733682], [-80.214959, 25.737257], [-80.209461, 25.737759], [-80.209021, 25.745098], [-80.205219, 25.745517], [-80.2048, 25.747275], [-80.204426, 25.745472], [-80.2008, 25.745287], [-80.200391, 25.743507], [-80.1988, 25.743303], [-80.1908, 25.743411], [-80.189426, 25.743724], [-80.1888, 25.745357], [-80.1788, 25.745425], [-80.178084, 25.743814], [-80.1728, 25.74045], [-80.171659, 25.738239], [-80.168641, 25.737257], [-80.167112, 25.732786], [-80.160377, 25.729521], [-80.159689, 25.728209], [-80.155822, 25.726076], [-80.1548, 25.723858], [-80.152132, 25.721766], [-80.151988, 25.720286], [-80.153435, 25.719098], [-80.153469, 25.715767], [-80.154865, 25.715163], [-80.1548, 25.714083], [-80.15449, 25.714788], [-80.1528, 25.714733], [-80.152533, 25.716831], [-80.150194, 25.718492], [-80.149776, 25.723098], [-80.151406, 25.724492], [-80.15219, 25.727708], [-80.155286, 25.728612], [-80.157878, 25.73202], [-80.157758, 25.734056], [-80.155918, 25.735098], [-80.155187, 25.739098], [-80.156563, 25.739335], [-80.1568, 25.741225], [-80.157959, 25.740257], [-80.1608, 25.740317], [-80.162332, 25.73863], [-80.163219, 25.738679], [-80.1668, 25.742018], [-80.167834, 25.744064], [-80.171081, 25.744817], [-80.171318, 25.747098], [-80.1728, 25.74858], [-80.1968, 25.748343], [-80.198992, 25.749098], [-80.197223, 25.749521], [-80.1968, 25.751319], [-80.193318, 25.751616], [-80.192961, 25.75326], [-80.191327, 25.753625], [-80.190952, 25.75525], [-80.187264, 25.755562], [-80.187004, 25.763098], [-80.183215, 25.763513], [-80.182971, 25.767269], [-80.181422, 25.76772], [-80.181111, 25.769098], [-80.181422, 25.770476], [-80.182959, 25.770939], [-80.1828, 25.775366], [-80.180663, 25.775235], [-80.180384, 25.773514], [-80.178662, 25.773236], [-80.178365, 25.771533], [-80.175171, 25.77147], [-80.1748, 25.772379], [-80.171229, 25.771098], [-80.170201, 25.769697], [-80.1668, 25.769377], [-80.166282, 25.767616], [-80.1648, 25.767357], [-80.163318, 25.767616], [-80.1628, 25.769321], [-80.15532, 25.769618], [-80.155021, 25.771319], [-80.1528, 25.771294], [-80.152399, 25.769499], [-80.14865, 25.769248], [-80.148267, 25.767631], [-80.1468, 25.767364], [-80.145333, 25.767631], [-80.144941, 25.771239], [-80.1428, 25.771315], [-80.14228, 25.769618], [-80.140628, 25.76927], [-80.140263, 25.767635], [-80.138339, 25.766637], [-80.1408, 25.76444], [-80.14494, 25.763238], [-80.1428, 25.760541], [-80.141419, 25.761717], [-80.1388, 25.760454], [-80.136919, 25.761217], [-80.135779, 25.763098], [-80.137462, 25.764436], [-80.137261, 25.765559], [-80.134558, 25.76534], [-80.134135, 25.763763], [-80.131719, 25.764017], [-80.131137, 25.771098], [-80.129496, 25.771794], [-80.129148, 25.773098], [-80.12924, 25.783098], [-80.127279, 25.785098], [-80.127121, 25.791098], [-80.125238, 25.793098], [-80.125086, 25.799098], [-80.123369, 25.799667], [-80.122976, 25.803274], [-80.12134, 25.803638], [-80.121015, 25.817098], [-80.119328, 25.817626], [-80.119064, 25.819098], [-80.119149, 25.843098], [-80.117211, 25.845098], [-80.117696, 25.848202], [-80.119179, 25.849098], [-80.117364, 25.851098], [-80.117641, 25.861098], [-80.119571, 25.863098], [-80.1208, 25.87338], [-80.1228, 25.871008], [-80.124531, 25.866829], [-80.127196, 25.865098], [-80.1288, 25.862642], [-80.132372, 25.86067], [-80.1348, 25.857746], [-80.1368, 25.85874], [-80.138344, 25.856642], [-80.14123, 25.856668], [-80.1408, 25.858212], [-80.137834, 25.858132], [-80.137416, 25.859098], [-80.138727, 25.861171], [-80.1408, 25.861364], [-80.142092, 25.86039], [-80.145604, 25.859902], [-80.146572, 25.85087], [-80.153006, 25.850892], [-80.153638, 25.85226], [-80.155023, 25.852875], [-80.155518, 25.85638], [-80.158409, 25.856707], [-80.162161, 25.854459], [-80.162632, 25.85093], [-80.170365, 25.850663], [-80.171026, 25.849324], [-80.171057, 25.853098], [-80.169392, 25.85369], [-80.169096, 25.855098], [-80.16917, 25.867098], [-80.165813, 25.868111], [-80.163905, 25.870203], [-80.163123, 25.877421], [-80.161843, 25.878141], [-80.159597, 25.881895], [-80.156746, 25.883044], [-80.156479, 25.885098], [-80.152614, 25.884912], [-80.1508, 25.887783], [-80.148242, 25.887656], [-80.1468, 25.886024], [-80.136564, 25.887098], [-80.1428, 25.888006], [-80.1448, 25.889782], [-80.1488, 25.890346], [-80.150153, 25.893745], [-80.1528, 25.894969], [-80.154634, 25.893098], [-80.152382, 25.891516], [-80.152528, 25.890826], [-80.155947, 25.891098], [-80.154976, 25.893098], [-80.155346, 25.895098], [-80.1568, 25.895431], [-80.15817, 25.897098], [-80.1568, 25.898184], [-80.1528, 25.897616], [-80.1488, 25.898398], [-80.1468, 25.900593], [-80.142833, 25.901098], [-80.151202, 25.903098], [-80.151747, 25.905098], [-80.150037, 25.907861], [-80.152452, 25.913098], [-80.1508, 25.914659], [-80.147535, 25.915098], [-80.153107, 25.916791], [-80.150681, 25.918979], [-80.151932, 25.923098], [-80.1448, 25.923719], [-80.1428, 25.925766], [-80.1368, 25.926025], [-80.134396, 25.924694], [-80.133256, 25.925098], [-80.133587, 25.927885], [-80.129049, 25.929098], [-80.1328, 25.929604], [-80.1348, 25.93167], [-80.1368, 25.931906], [-80.13849, 25.928788], [-80.1428, 25.927896], [-80.1448, 25.930184], [-80.14927, 25.930628], [-80.147323, 25.937621], [-80.142219, 25.939098], [-80.144732, 25.941098], [-80.144033, 25.943098], [-80.1408, 25.944008], [-80.1388, 25.941506], [-80.1368, 25.942701], [-80.135124, 25.947098], [-80.13646, 25.949098], [-80.135096, 25.951098], [-80.1308, 25.954271], [-80.128075, 25.953823], [-80.1268, 25.951932], [-80.122254, 25.951098], [-80.1208, 25.94778], [-80.1188, 25.957957], [-80.1208, 25.957956], [-80.122563, 25.954861], [-80.1248, 25.954266], [-80.1268, 25.95617], [-80.1308, 25.9568], [-80.1328, 25.956077], [-80.137555, 25.957098], [-80.1368, 25.964429], [-80.135255, 25.962643], [-80.133611, 25.962287], [-80.130514, 25.962812], [-80.1288, 25.964469], [-80.1268, 25.963367], [-80.124534, 25.967098], [-80.1248, 25.9691], [-80.126582, 25.971098], [-80.125822, 25.973098], [-80.1328, 25.973839], [-80.136562, 25.975336], [-80.137497, 25.977098], [-80.13803, 25.983098], [-80.1368, 25.984145], [-80.132098, 25.982396], [-80.126098, 25.985098], [-80.126756, 25.987098], [-80.1288, 25.986448], [-80.13364, 25.988258], [-80.1348, 25.990562], [-80.137874, 25.992023], [-80.1408, 25.994709], [-80.137802, 25.997098], [-80.141594, 25.998304], [-80.147628, 26.00627], [-80.146739, 26.009037], [-80.144296, 26.011098], [-80.1448, 26.012033], [-80.1488, 26.015993], [-80.1508, 26.013827], [-80.153237, 26.017098], [-80.152047, 26.019098], [-80.157448, 26.023098], [-80.15786, 26.025098], [-80.1568, 26.027699], [-80.1508, 26.030897], [-80.148987, 26.033098], [-80.1508, 26.035594], [-80.1548, 26.037095], [-80.1568, 26.035912], [-80.160569, 26.039329], [-80.160502, 26.0428], [-80.15432, 26.049098], [-80.1588, 26.050562], [-80.161499, 26.052399], [-80.162224, 26.057098], [-80.161374, 26.063098], [-80.164661, 26.065237], [-80.1648, 26.068719], [-80.165642, 26.063098], [-80.163225, 26.060673], [-80.163551, 26.053098], [-80.1648, 26.050402], [-80.168017, 26.049098], [-80.168879, 26.047098], [-80.1668, 26.045555], [-80.1648, 26.045972], [-80.164432, 26.045098], [-80.1648, 26.041745], [-80.1668, 26.042362], [-80.167904, 26.039098], [-80.167009, 26.038889], [-80.167336, 26.033634], [-80.173705, 26.034193], [-80.1748, 26.035734], [-80.179423, 26.033098], [-80.1748, 26.030675], [-80.1728, 26.032072], [-80.1708, 26.030383], [-80.1688, 26.030733], [-80.167902, 26.029996], [-80.169056, 26.021354], [-80.1748, 26.020726], [-80.177676, 26.019098], [-80.1808, 26.014801], [-80.1828, 26.014993], [-80.1848, 26.015813], [-80.1888, 26.021671], [-80.1908, 26.02041], [-80.19499, 26.020908], [-80.196146, 26.023098], [-80.196108, 26.025098], [-80.202801, 26.029097], [-80.201374, 26.033098], [-80.205553, 26.034345], [-80.2088, 26.038924], [-80.20924, 26.033538], [-80.2108, 26.033232], [-80.211929, 26.035098], [-80.211782, 26.039098], [-80.213739, 26.041098], [-80.213801, 26.059098], [-80.2128, 26.062278], [-80.21073, 26.061028], [-80.208204, 26.063098], [-80.211068, 26.065098], [-80.2088, 26.066072], [-80.208266, 26.067098], [-80.2128, 26.068146], [-80.213885, 26.070013], [-80.21461, 26.084908], [-80.212785, 26.085083], [-80.212785, 26.087098], [-80.2128, 26.087115], [-80.212863, 26.085161], [-80.2164, 26.085498], [-80.2168, 26.090538], [-80.216942, 26.079098], [-80.215308, 26.077098], [-80.216126, 26.070424], [-80.2168, 26.068467], [-80.223728, 26.065098], [-80.216525, 26.063373], [-80.215404, 26.059098], [-80.2162, 26.055098], [-80.215473, 26.053098], [-80.216225, 26.039098], [-80.214226, 26.037098], [-80.214433, 26.034731], [-80.2148, 26.033129], [-80.219957, 26.031098], [-80.22227, 26.029098], [-80.222838, 26.027136], [-80.224851, 26.027098], [-80.226627, 26.019098], [-80.2288, 26.020202], [-80.22954, 26.015098], [-80.231648, 26.013098], [-80.232195, 26.010493], [-80.2348, 26.010377], [-80.236292, 26.009098], [-80.229801, 26.007098], [-80.229583, 26.005098], [-80.231562, 26.003098], [-80.232007, 25.999098], [-80.234083, 25.997098], [-80.235081, 25.996817], [-80.2368, 25.998631], [-80.2448, 25.998556], [-80.245059, 25.999357], [-80.243308, 26.001098], [-80.245074, 26.002824], [-80.24526, 26.005098], [-80.2422, 26.009098], [-80.24798, 26.011098], [-80.2488, 26.012061], [-80.249101, 26.011399], [-80.253854, 26.012044], [-80.257194, 26.014704], [-80.256184, 26.015714], [-80.255636, 26.014262], [-80.2548, 26.014511], [-80.253526, 26.017098], [-80.259296, 26.018602], [-80.261066, 26.023098], [-80.263638, 26.025098], [-80.261578, 26.029876], [-80.256029, 26.031098], [-80.263626, 26.032272], [-80.2648, 26.03564], [-80.265713, 26.033098], [-80.2688, 26.032333], [-80.2708, 26.032988], [-80.27325, 26.032648], [-80.279663, 26.036235], [-80.279669, 26.041967], [-80.27828, 26.045098], [-80.279465, 26.046433], [-80.279698, 26.051098], [-80.27495, 26.053098], [-80.27428, 26.055098], [-80.277232, 26.057098], [-80.277173, 26.059471], [-80.275004, 26.061302], [-80.27416, 26.061098], [-80.273306, 26.056592], [-80.2688, 26.053236], [-80.26795, 26.055098], [-80.268214, 26.057098], [-80.26981, 26.059098], [-80.269378, 26.061676], [-80.2668, 26.062402], [-80.2608, 26.059943], [-80.259786, 26.062084], [-80.255781, 26.065098], [-80.2608, 26.066846], [-80.2688, 26.066669], [-80.2708, 26.06884], [-80.271161, 26.067459], [-80.279209, 26.066689], [-80.279359, 26.067657], [-80.277805, 26.069098], [-80.278317, 26.071581], [-80.279684, 26.073098], [-80.277483, 26.075098], [-80.279824, 26.076074], [-80.280488, 26.083098], [-80.282174, 26.083724], [-80.2828, 26.085067], [-80.283211, 26.083098], [-80.28157, 26.082328], [-80.281381, 26.081098], [-80.283077, 26.077375], [-80.281802, 26.073098], [-80.283185, 26.069098], [-80.2848, 26.06763], [-80.2888, 26.073024], [-80.297853, 26.076045], [-80.298013, 26.078311], [-80.29571, 26.079098], [-80.294358, 26.081098], [-80.2948, 26.082731], [-80.297101, 26.083399], [-80.294211, 26.087098], [-80.294152, 26.089098], [-80.2968, 26.090222], [-80.2988, 26.092352], [-80.300213, 26.090511], [-80.3048, 26.090088], [-80.307836, 26.093098], [-80.3108, 26.093619], [-80.311395, 26.097693], [-80.31021, 26.100508], [-80.307977, 26.101098], [-80.308434, 26.105098], [-80.3068, 26.106446], [-80.304733, 26.103031], [-80.303352, 26.10565], [-80.302117, 26.105781], [-80.301876, 26.103098], [-80.300299, 26.101599], [-80.300178, 26.099098], [-80.2988, 26.096327], [-80.296564, 26.098862], [-80.296072, 26.101098], [-80.297101, 26.103399], [-80.293203, 26.105098], [-80.293901, 26.107098], [-80.2928, 26.107501], [-80.291609, 26.107098], [-80.291782, 26.105098], [-80.284452, 26.105098], [-80.283379, 26.104519], [-80.2828, 26.102734], [-80.2748, 26.104255], [-80.273301, 26.103098], [-80.2728, 26.101339], [-80.2708, 26.100367], [-80.266741, 26.101157], [-80.2628, 26.09997], [-80.2568, 26.099724], [-80.2548, 26.09827], [-80.249598, 26.0983], [-80.2468, 26.096818], [-80.240111, 26.097098], [-80.246356, 26.097542], [-80.246694, 26.099204], [-80.2528, 26.099804], [-80.2548, 26.101556], [-80.2608, 26.101788], [-80.2628, 26.103951], [-80.2648, 26.104631], [-80.2668, 26.104349], [-80.2708, 26.105902], [-80.275851, 26.106047], [-80.278049, 26.107849], [-80.286024, 26.109874], [-80.291864, 26.110034], [-80.296543, 26.113098], [-80.2968, 26.119062], [-80.297184, 26.113098], [-80.29794, 26.112238], [-80.3008, 26.111938], [-80.3028, 26.114021], [-80.309314, 26.114584], [-80.311884, 26.117098], [-80.311611, 26.117909], [-80.3088, 26.120398], [-80.3068, 26.119807], [-80.304764, 26.121098], [-80.3068, 26.122345], [-80.313569, 26.122329], [-80.3148, 26.135872], [-80.316963, 26.131098], [-80.315919, 26.129979], [-80.315395, 26.127098], [-80.3168, 26.12374], [-80.3188, 26.123714], [-80.3228, 26.120217], [-80.325976, 26.123098], [-80.3268, 26.127012], [-80.3288, 26.123534], [-80.330445, 26.125098], [-80.329978, 26.126276], [-80.328073, 26.127098], [-80.328777, 26.127121], [-80.329231, 26.129098], [-80.328127, 26.130425], [-80.325842, 26.131098], [-80.3288, 26.131451], [-80.330194, 26.133098], [-80.3288, 26.135092], [-80.326494, 26.134792], [-80.325987, 26.136285], [-80.324419, 26.137098], [-80.325488, 26.139098], [-80.325384, 26.141098], [-80.324524, 26.141374], [-80.3228, 26.139568], [-80.3208, 26.139873], [-80.318502, 26.141098], [-80.317565, 26.143863], [-80.313788, 26.145098], [-80.3188, 26.14749], [-80.320949, 26.146949], [-80.32484, 26.151098], [-80.32406, 26.153098], [-80.320623, 26.156921], [-80.320493, 26.158791], [-80.3188, 26.161097], [-80.3208, 26.161799], [-80.321004, 26.163302], [-80.319223, 26.165521], [-80.317274, 26.165572], [-80.316774, 26.167124], [-80.315915, 26.162213], [-80.318799, 26.161097], [-80.315659, 26.160239], [-80.3148, 26.158531], [-80.314182, 26.163098], [-80.311727, 26.165098], [-80.3108, 26.16725], [-80.3088, 26.164402], [-80.3048, 26.168064], [-80.3028, 26.167037], [-80.300814, 26.169098], [-80.3048, 26.170233], [-80.3068, 26.1699], [-80.3088, 26.172274], [-80.310373, 26.170671], [-80.3128, 26.170272], [-80.313505, 26.171098], [-80.311112, 26.17341], [-80.309515, 26.173813], [-80.309198, 26.175496], [-80.30561, 26.179908], [-80.302449, 26.180747], [-80.30191, 26.182208], [-80.300571, 26.182869], [-80.300228, 26.184526], [-80.298502, 26.1848], [-80.29651, 26.186808], [-80.296347, 26.188645], [-80.294675, 26.188973], [-80.2948, 26.194697]]], "type": "Polygon"}, "properties": {"color": "#bf4040", "contour": 30, "fill": "#bf4040", "fill-opacity": 0.33, "fillColor": "#bf4040", "fillOpacity": 0.33, "metric": "time", "opacity": 0.33}, "type": "Feature"}], "properties": {"name": "Satellite \u2013 Doral"}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_5d7ae532d4e1adbe439e5060ebd462d2.bindTooltip(
+                `<div>
+                     Satellite – Doral
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_5d7ae532d4e1adbe439e5060ebd462d2.addTo(feature_group_18a8ca063851cdb0d66d8f6716e9d8f8);
+        
+    
+        function geo_json_592ca151d7371fe919a16daf986b0941_styler(feature) {
+            switch(feature.properties.fillColor) {
+                default:
+                    return {"color": "#F39C12", "fillColor": "#F39C12", "fillOpacity": 0.25, "weight": 2};
+            }
+        }
+        function geo_json_592ca151d7371fe919a16daf986b0941_highlighter(feature) {
+            switch(feature.properties.fillColor) {
+                default:
+                    return {"weight": 3};
+            }
+        }
+
+        function geo_json_592ca151d7371fe919a16daf986b0941_onEachFeature(feature, layer) {
+
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_592ca151d7371fe919a16daf986b0941.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_592ca151d7371fe919a16daf986b0941_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_592ca151d7371fe919a16daf986b0941 = L.geoJson(null, {
+                onEachFeature: geo_json_592ca151d7371fe919a16daf986b0941_onEachFeature,
+            
+                style: geo_json_592ca151d7371fe919a16daf986b0941_styler,
+            ...{
+}
+        });
+
+        function geo_json_592ca151d7371fe919a16daf986b0941_add (data) {
+            geo_json_592ca151d7371fe919a16daf986b0941
+                .addData(data);
+        }
+            geo_json_592ca151d7371fe919a16daf986b0941_add({"features": [{"geometry": {"coordinates": [[[-80.216369, 26.091064], [-80.21657, 26.076705], [-80.21807, 26.068406], [-80.222197, 26.066705], [-80.224294, 26.064705], [-80.220369, 26.063454], [-80.218369, 26.064055], [-80.217475, 26.063599], [-80.21497, 26.058705], [-80.21578, 26.054705], [-80.215071, 26.052705], [-80.216109, 26.034445], [-80.217747, 26.032083], [-80.222675, 26.029011], [-80.227085, 26.024705], [-80.225681, 26.022705], [-80.226369, 26.020182], [-80.229895, 26.021179], [-80.232369, 26.025387], [-80.235641, 26.019977], [-80.240332, 26.016705], [-80.238817, 26.014705], [-80.244369, 26.011674], [-80.246269, 26.012705], [-80.246433, 26.016641], [-80.248369, 26.018718], [-80.250029, 26.016365], [-80.249694, 26.012705], [-80.250369, 26.010767], [-80.253762, 26.008705], [-80.251687, 26.007387], [-80.252427, 26.002705], [-80.259219, 25.997555], [-80.261807, 25.997267], [-80.262369, 25.998586], [-80.263699, 25.996035], [-80.267123, 25.994705], [-80.265148, 25.992705], [-80.269782, 25.988118], [-80.274464, 25.986705], [-80.272892, 25.984705], [-80.276369, 25.983117], [-80.278369, 25.986255], [-80.280369, 25.983302], [-80.286428, 25.984764], [-80.29274, 25.980334], [-80.295406, 25.983668], [-80.296818, 25.984256], [-80.296904, 25.98524], [-80.289569, 25.986705], [-80.293052, 25.988022], [-80.29369, 25.992026], [-80.293055, 25.992705], [-80.296369, 25.995729], [-80.297912, 25.992705], [-80.296843, 25.990705], [-80.298369, 25.989187], [-80.302747, 25.989083], [-80.304369, 25.987637], [-80.306369, 25.989106], [-80.310369, 25.989143], [-80.310466, 25.988608], [-80.309517, 25.987557], [-80.309293, 25.985781], [-80.305753, 25.983321], [-80.304369, 25.982739], [-80.303093, 25.983429], [-80.299882, 25.983192], [-80.299962, 25.980298], [-80.302082, 25.980705], [-80.304369, 25.982685], [-80.30909, 25.981984], [-80.309803, 25.985271], [-80.312441, 25.980777], [-80.319569, 25.978705], [-80.312369, 25.978244], [-80.310621, 25.976705], [-80.310369, 25.974575], [-80.309786, 25.976122], [-80.308369, 25.976578], [-80.304369, 25.975231], [-80.302369, 25.975787], [-80.300369, 25.975063], [-80.298369, 25.977346], [-80.298369, 25.973298], [-80.304369, 25.971943], [-80.310369, 25.972561], [-80.314369, 25.97169], [-80.324369, 25.971598], [-80.325549, 25.969885], [-80.328833, 25.969169], [-80.333251, 25.963587], [-80.337696, 25.962705], [-80.339229, 25.961565], [-80.342369, 25.957909], [-80.343173, 25.955509], [-80.348369, 25.954947], [-80.349796, 25.955278], [-80.350185, 25.956889], [-80.351843, 25.95723], [-80.352369, 25.975039], [-80.353223, 25.948705], [-80.355479, 25.945815], [-80.358682, 25.945018], [-80.359172, 25.943508], [-80.360542, 25.942878], [-80.36068, 25.941016], [-80.362259, 25.940705], [-80.360369, 25.940545], [-80.360276, 25.942612], [-80.355589, 25.943485], [-80.353591, 25.941483], [-80.353114, 25.938705], [-80.351264, 25.93581], [-80.35192, 25.910705], [-80.349908, 25.908705], [-80.350286, 25.904705], [-80.353663, 25.908705], [-80.354156, 25.914918], [-80.356369, 25.920358], [-80.357574, 25.91791], [-80.359192, 25.916705], [-80.357417, 25.914705], [-80.360136, 25.912705], [-80.357537, 25.910705], [-80.357953, 25.904289], [-80.362369, 25.903457], [-80.364369, 25.905484], [-80.366369, 25.905181], [-80.370369, 25.902261], [-80.372829, 25.902705], [-80.378417, 25.898753], [-80.378686, 25.897022], [-80.381264, 25.89781], [-80.381463, 25.902705], [-80.383425, 25.904705], [-80.381836, 25.906172], [-80.381324, 25.90966], [-80.37925, 25.910705], [-80.37931, 25.914705], [-80.377411, 25.916705], [-80.378037, 25.922373], [-80.376156, 25.922705], [-80.376113, 25.926449], [-80.3743, 25.926636], [-80.373937, 25.930273], [-80.372265, 25.930705], [-80.372369, 25.931962], [-80.372571, 25.930907], [-80.374504, 25.93084], [-80.375218, 25.927554], [-80.376719, 25.927055], [-80.377041, 25.924705], [-80.379134, 25.922705], [-80.37931, 25.918705], [-80.381373, 25.916705], [-80.381113, 25.912705], [-80.383531, 25.910705], [-80.382814, 25.908705], [-80.384706, 25.907042], [-80.385375, 25.903711], [-80.388107, 25.902967], [-80.388369, 25.904791], [-80.390899, 25.904705], [-80.388713, 25.904361], [-80.387891, 25.897183], [-80.389527, 25.894705], [-80.389941, 25.872705], [-80.391508, 25.870705], [-80.389961, 25.868705], [-80.390015, 25.854705], [-80.389769, 25.853305], [-80.388369, 25.852271], [-80.388186, 25.842705], [-80.38956, 25.841896], [-80.38991, 25.839164], [-80.389866, 25.836705], [-80.38808, 25.834705], [-80.388152, 25.828488], [-80.392369, 25.828033], [-80.394369, 25.829988], [-80.396369, 25.827861], [-80.398833, 25.826705], [-80.395814, 25.824705], [-80.396047, 25.820383], [-80.400117, 25.818705], [-80.396068, 25.817006], [-80.396369, 25.812353], [-80.400369, 25.812305], [-80.402369, 25.814221], [-80.409583, 25.813919], [-80.414369, 25.811802], [-80.415929, 25.813145], [-80.42436, 25.812705], [-80.422369, 25.811235], [-80.420369, 25.812164], [-80.418369, 25.809698], [-80.416369, 25.809114], [-80.396369, 25.809057], [-80.396085, 25.806421], [-80.399309, 25.805645], [-80.400473, 25.804601], [-80.396369, 25.803297], [-80.39556, 25.801514], [-80.393968, 25.800705], [-80.395563, 25.799899], [-80.396369, 25.79833], [-80.400369, 25.798809], [-80.401706, 25.798042], [-80.402369, 25.792353], [-80.403349, 25.797725], [-80.414369, 25.798183], [-80.415878, 25.803196], [-80.418931, 25.802705], [-80.417706, 25.801368], [-80.417797, 25.798705], [-80.420369, 25.798099], [-80.422794, 25.79628], [-80.418058, 25.795016], [-80.417966, 25.792705], [-80.421662, 25.791998], [-80.426698, 25.788705], [-80.425879, 25.786705], [-80.423346, 25.784705], [-80.424841, 25.782705], [-80.422188, 25.778524], [-80.424679, 25.778394], [-80.426369, 25.780146], [-80.428369, 25.778092], [-80.432448, 25.776705], [-80.430431, 25.774643], [-80.428775, 25.774299], [-80.420203, 25.774871], [-80.421555, 25.773891], [-80.421659, 25.772705], [-80.420118, 25.770705], [-80.420369, 25.767373], [-80.425374, 25.764705], [-80.426845, 25.762705], [-80.434369, 25.761741], [-80.446369, 25.762252], [-80.448369, 25.761266], [-80.450369, 25.762218], [-80.474369, 25.761836], [-80.476369, 25.764814], [-80.478369, 25.761681], [-80.481352, 25.763722], [-80.482369, 25.767323], [-80.483415, 25.761751], [-80.489477, 25.760705], [-80.484625, 25.760449], [-80.480803, 25.758271], [-80.480369, 25.757236], [-80.480082, 25.758705], [-80.478369, 25.759729], [-80.450041, 25.759033], [-80.448369, 25.738183], [-80.446369, 25.741928], [-80.444369, 25.741691], [-80.442655, 25.740419], [-80.440369, 25.736156], [-80.438369, 25.738569], [-80.437455, 25.736705], [-80.438138, 25.734705], [-80.433934, 25.73314], [-80.432704, 25.730705], [-80.43283, 25.728705], [-80.426018, 25.727056], [-80.42603, 25.724705], [-80.424369, 25.722427], [-80.422369, 25.724015], [-80.420949, 25.722124], [-80.417496, 25.721578], [-80.416369, 25.716719], [-80.414369, 25.714904], [-80.413432, 25.718705], [-80.412369, 25.719498], [-80.410931, 25.718705], [-80.411669, 25.714705], [-80.407651, 25.712705], [-80.40199, 25.713084], [-80.400597, 25.710705], [-80.401443, 25.708705], [-80.399108, 25.706705], [-80.398369, 25.703349], [-80.396369, 25.711023], [-80.394369, 25.711301], [-80.392369, 25.709275], [-80.390369, 25.711592], [-80.388369, 25.708177], [-80.386369, 25.708972], [-80.386369, 25.701941], [-80.388369, 25.702597], [-80.392854, 25.700705], [-80.390369, 25.699675], [-80.386369, 25.699911], [-80.386052, 25.699022], [-80.387117, 25.697957], [-80.387848, 25.698184], [-80.388013, 25.696349], [-80.389387, 25.695723], [-80.389885, 25.692221], [-80.398369, 25.689242], [-80.40083, 25.690705], [-80.398369, 25.695569], [-80.400369, 25.695341], [-80.404021, 25.692705], [-80.405896, 25.688232], [-80.409241, 25.687577], [-80.411059, 25.685395], [-80.414069, 25.684705], [-80.408369, 25.683139], [-80.403501, 25.683573], [-80.402055, 25.680705], [-80.402617, 25.678705], [-80.401491, 25.674705], [-80.402369, 25.673063], [-80.404732, 25.673068], [-80.406369, 25.671477], [-80.409507, 25.670705], [-80.402207, 25.668867], [-80.401911, 25.666705], [-80.400369, 25.664726], [-80.399137, 25.667473], [-80.396253, 25.668821], [-80.395745, 25.666705], [-80.393395, 25.664705], [-80.394369, 25.663916], [-80.396369, 25.66443], [-80.397145, 25.663481], [-80.396369, 25.658621], [-80.399284, 25.65979], [-80.400369, 25.664293], [-80.401008, 25.659344], [-80.40562, 25.656705], [-80.40492, 25.654705], [-80.40803, 25.652705], [-80.400369, 25.651646], [-80.399639, 25.650705], [-80.400369, 25.650001], [-80.410369, 25.649232], [-80.415178, 25.649896], [-80.416369, 25.650724], [-80.417734, 25.648705], [-80.416369, 25.646681], [-80.408528, 25.644545], [-80.406369, 25.642071], [-80.404369, 25.643791], [-80.400239, 25.642835], [-80.402468, 25.640705], [-80.399374, 25.6397], [-80.398369, 25.63764], [-80.396919, 25.640705], [-80.397027, 25.643363], [-80.390369, 25.644386], [-80.38961, 25.645946], [-80.388369, 25.646381], [-80.387298, 25.645776], [-80.387561, 25.634705], [-80.385396, 25.629732], [-80.392112, 25.626705], [-80.382984, 25.62609], [-80.382369, 25.61964], [-80.380369, 25.623573], [-80.378527, 25.600705], [-80.376735, 25.600339], [-80.376231, 25.598567], [-80.376318, 25.600756], [-80.378163, 25.600911], [-80.377697, 25.618705], [-80.376369, 25.625645], [-80.373633, 25.626705], [-80.374849, 25.628225], [-80.378284, 25.62879], [-80.378933, 25.630141], [-80.380447, 25.630627], [-80.381444, 25.632705], [-80.380931, 25.634705], [-80.382369, 25.63607], [-80.382892, 25.638182], [-80.384369, 25.638973], [-80.384694, 25.646705], [-80.38281, 25.647146], [-80.380885, 25.652705], [-80.378773, 25.655109], [-80.376946, 25.655282], [-80.376145, 25.656929], [-80.374466, 25.656802], [-80.374557, 25.658893], [-80.372366, 25.658705], [-80.373844, 25.656705], [-80.370369, 25.655469], [-80.366369, 25.651505], [-80.365146, 25.653482], [-80.363723, 25.653351], [-80.363601, 25.650705], [-80.358369, 25.64584], [-80.354369, 25.65281], [-80.350369, 25.64774], [-80.347707, 25.646705], [-80.347502, 25.643838], [-80.34867, 25.642705], [-80.344369, 25.643189], [-80.34186, 25.641214], [-80.340369, 25.641488], [-80.339341, 25.643677], [-80.3376, 25.643474], [-80.336972, 25.642705], [-80.338369, 25.639717], [-80.341286, 25.639622], [-80.34482, 25.636705], [-80.342369, 25.634079], [-80.341592, 25.633928], [-80.34204, 25.634705], [-80.34116, 25.635496], [-80.339605, 25.634705], [-80.341769, 25.632705], [-80.342169, 25.628705], [-80.340098, 25.628434], [-80.338858, 25.631194], [-80.337276, 25.631612], [-80.332369, 25.635789], [-80.330369, 25.63574], [-80.326369, 25.631187], [-80.324369, 25.630666], [-80.323892, 25.634228], [-80.319736, 25.636705], [-80.321081, 25.638705], [-80.320369, 25.639686], [-80.31887, 25.638204], [-80.316369, 25.639721], [-80.314761, 25.643097], [-80.312199, 25.644705], [-80.312797, 25.646705], [-80.309655, 25.647991], [-80.306369, 25.653312], [-80.304369, 25.654616], [-80.302369, 25.651257], [-80.299597, 25.653933], [-80.299505, 25.656705], [-80.296369, 25.66103], [-80.294369, 25.660373], [-80.292369, 25.662376], [-80.288369, 25.663991], [-80.286359, 25.662705], [-80.286973, 25.660705], [-80.284944, 25.65813], [-80.284369, 25.655222], [-80.283362, 25.659698], [-80.280369, 25.661176], [-80.276861, 25.667198], [-80.272369, 25.672119], [-80.268439, 25.674705], [-80.270825, 25.676705], [-80.270643, 25.680979], [-80.266856, 25.681192], [-80.264369, 25.683929], [-80.259996, 25.684332], [-80.259289, 25.685625], [-80.256369, 25.68584], [-80.254369, 25.687549], [-80.25003, 25.688366], [-80.250061, 25.690705], [-80.251802, 25.691272], [-80.252471, 25.694705], [-80.251082, 25.695418], [-80.250369, 25.697318], [-80.246369, 25.69737], [-80.245034, 25.698705], [-80.244677, 25.708705], [-80.244985, 25.710089], [-80.246627, 25.710705], [-80.246824, 25.71425], [-80.248507, 25.714843], [-80.244813, 25.715149], [-80.244511, 25.718847], [-80.240816, 25.719152], [-80.240584, 25.722705], [-80.238702, 25.723038], [-80.238476, 25.724812], [-80.232725, 25.725061], [-80.232484, 25.72682], [-80.230725, 25.727061], [-80.230529, 25.730705], [-80.228653, 25.730989], [-80.22846, 25.732796], [-80.222643, 25.732979], [-80.222369, 25.734833], [-80.222096, 25.732978], [-80.216657, 25.732993], [-80.216462, 25.736798], [-80.210689, 25.737025], [-80.210471, 25.738807], [-80.208686, 25.739022], [-80.208448, 25.744784], [-80.204618, 25.744954], [-80.204369, 25.746815], [-80.204141, 25.744933], [-80.200282, 25.744792], [-80.200025, 25.743049], [-80.198211, 25.742863], [-80.190642, 25.742978], [-80.190369, 25.744839], [-80.178264, 25.74481], [-80.178047, 25.743027], [-80.17626, 25.742814], [-80.176037, 25.741036], [-80.174257, 25.740817], [-80.174029, 25.739045], [-80.172246, 25.738828], [-80.17192, 25.737154], [-80.170232, 25.736842], [-80.169922, 25.735152], [-80.168234, 25.73484], [-80.167884, 25.73119], [-80.166204, 25.73087], [-80.165762, 25.729312], [-80.164369, 25.729008], [-80.162976, 25.729312], [-80.16224, 25.730834], [-80.161975, 25.729099], [-80.160236, 25.728838], [-80.160069, 25.727005], [-80.158369, 25.725282], [-80.157783, 25.723291], [-80.156195, 25.722879], [-80.155783, 25.721291], [-80.15222, 25.720854], [-80.1539, 25.720236], [-80.154369, 25.71846], [-80.159635, 25.717971], [-80.160015, 25.714705], [-80.15966, 25.713414], [-80.158192, 25.712528], [-80.162369, 25.71226], [-80.163924, 25.710705], [-80.163413, 25.707661], [-80.162053, 25.706705], [-80.162169, 25.704505], [-80.163746, 25.704082], [-80.164369, 25.702324], [-80.169341, 25.701677], [-80.170032, 25.698368], [-80.173201, 25.695537], [-80.17454, 25.692705], [-80.174478, 25.690596], [-80.172971, 25.690103], [-80.172244, 25.68883], [-80.172369, 25.686285], [-80.160369, 25.680125], [-80.158369, 25.677866], [-80.155885, 25.682221], [-80.155511, 25.685563], [-80.157153, 25.688705], [-80.155817, 25.690705], [-80.157103, 25.692705], [-80.155039, 25.694705], [-80.154905, 25.700705], [-80.15291, 25.702705], [-80.152533, 25.708705], [-80.151161, 25.709497], [-80.150747, 25.711083], [-80.150608, 25.716705], [-80.148835, 25.717171], [-80.148593, 25.722705], [-80.148817, 25.724257], [-80.150516, 25.724558], [-80.150801, 25.726273], [-80.152511, 25.726563], [-80.152789, 25.728285], [-80.154507, 25.728567], [-80.154777, 25.730297], [-80.156504, 25.73057], [-80.156818, 25.732705], [-80.15486, 25.733196], [-80.154543, 25.734879], [-80.15301, 25.735346], [-80.152369, 25.737125], [-80.150369, 25.73703], [-80.149429, 25.737765], [-80.147011, 25.741347], [-80.144109, 25.742445], [-80.142342, 25.746732], [-80.146369, 25.749054], [-80.150369, 25.746386], [-80.152369, 25.747837], [-80.154369, 25.74783], [-80.155644, 25.746705], [-80.156128, 25.744464], [-80.157757, 25.744093], [-80.158197, 25.742533], [-80.159895, 25.742231], [-80.16022, 25.740556], [-80.163961, 25.740297], [-80.164369, 25.738521], [-80.164802, 25.742272], [-80.166498, 25.742575], [-80.166762, 25.744312], [-80.168495, 25.744579], [-80.168772, 25.746302], [-80.172485, 25.746588], [-80.172732, 25.748342], [-80.198369, 25.748587], [-80.198486, 25.750705], [-80.196602, 25.750938], [-80.196369, 25.752825], [-80.192629, 25.752965], [-80.192369, 25.754825], [-80.188618, 25.754954], [-80.188451, 25.756787], [-80.186616, 25.756952], [-80.186447, 25.762783], [-80.182619, 25.762955], [-80.182459, 25.766795], [-80.180677, 25.767013], [-80.180677, 25.770397], [-80.184449, 25.770625], [-80.182602, 25.770938], [-80.182486, 25.772705], [-80.182602, 25.774472], [-80.184474, 25.774705], [-80.182588, 25.774924], [-80.182369, 25.776806], [-80.18215, 25.774924], [-80.180298, 25.774776], [-80.180158, 25.772916], [-80.178109, 25.772705], [-80.17785, 25.771224], [-80.172369, 25.770895], [-80.171862, 25.769212], [-80.170179, 25.768895], [-80.16261, 25.768946], [-80.162369, 25.770822], [-80.162001, 25.769073], [-80.154638, 25.768974], [-80.154433, 25.770769], [-80.152369, 25.770776], [-80.152227, 25.768847], [-80.148319, 25.768755], [-80.14821, 25.766864], [-80.144528, 25.766864], [-80.144442, 25.770705], [-80.142508, 25.770844], [-80.142325, 25.772749], [-80.142231, 25.768843], [-80.140323, 25.768751], [-80.140231, 25.766843], [-80.138287, 25.766623], [-80.146158, 25.766494], [-80.146369, 25.7646], [-80.146601, 25.766473], [-80.150137, 25.766473], [-80.150148, 25.760926], [-80.148297, 25.760776], [-80.148156, 25.758918], [-80.146297, 25.758777], [-80.14615, 25.756924], [-80.144297, 25.756777], [-80.144153, 25.754921], [-80.136587, 25.754923], [-80.136441, 25.758777], [-80.134579, 25.758915], [-80.134439, 25.760775], [-80.132583, 25.760919], [-80.132476, 25.762705], [-80.132583, 25.764491], [-80.136451, 25.764787], [-80.130516, 25.764852], [-80.130442, 25.770705], [-80.128521, 25.770857], [-80.128448, 25.784705], [-80.126541, 25.784877], [-80.126461, 25.794705], [-80.124565, 25.794901], [-80.124467, 25.800705], [-80.122574, 25.80091], [-80.122439, 25.804775], [-80.120584, 25.80492], [-80.120478, 25.818705], [-80.11861, 25.818946], [-80.11849, 25.820705], [-80.118511, 25.852705], [-80.116671, 25.853007], [-80.11652, 25.854705], [-80.116671, 25.856403], [-80.118519, 25.856705], [-80.118805, 25.882269], [-80.120591, 25.882705], [-80.120721, 25.894705], [-80.121074, 25.896], [-80.122696, 25.897032], [-80.120796, 25.903132], [-80.121222, 25.928705], [-80.119678, 25.930705], [-80.120369, 25.934729], [-80.122369, 25.93695], [-80.124211, 25.932547], [-80.126369, 25.932648], [-80.128369, 25.931205], [-80.131342, 25.930705], [-80.12907, 25.930004], [-80.128369, 25.928748], [-80.125221, 25.928705], [-80.127339, 25.927675], [-80.128715, 25.922705], [-80.125818, 25.921256], [-80.125506, 25.918705], [-80.124063, 25.916705], [-80.125627, 25.913963], [-80.125911, 25.906705], [-80.127704, 25.904705], [-80.127532, 25.900705], [-80.129877, 25.898705], [-80.130115, 25.894451], [-80.132369, 25.8962], [-80.135253, 25.895589], [-80.139479, 25.891815], [-80.140369, 25.888346], [-80.14263, 25.888444], [-80.143172, 25.889902], [-80.144369, 25.890303], [-80.148989, 25.890705], [-80.14905, 25.894024], [-80.151161, 25.895913], [-80.152506, 25.898568], [-80.141228, 25.899564], [-80.140798, 25.900705], [-80.142369, 25.902276], [-80.148807, 25.902705], [-80.148807, 25.910705], [-80.150771, 25.912705], [-80.148021, 25.913053], [-80.145949, 25.911125], [-80.145658, 25.908705], [-80.143544, 25.906705], [-80.14299, 25.904084], [-80.140079, 25.904415], [-80.139276, 25.906705], [-80.140238, 25.908705], [-80.139185, 25.910705], [-80.142375, 25.914699], [-80.141152, 25.916705], [-80.142369, 25.917871], [-80.144369, 25.918024], [-80.147935, 25.921139], [-80.152796, 25.922705], [-80.149236, 25.926705], [-80.151832, 25.928705], [-80.151215, 25.933551], [-80.147953, 25.934289], [-80.146369, 25.937475], [-80.142369, 25.937651], [-80.140064, 25.938705], [-80.143296, 25.942705], [-80.142369, 25.943256], [-80.140369, 25.942735], [-80.136369, 25.940232], [-80.134858, 25.941194], [-80.135096, 25.946705], [-80.133719, 25.948705], [-80.134315, 25.950705], [-80.13085, 25.953186], [-80.124369, 25.953943], [-80.122369, 25.951865], [-80.119757, 25.952093], [-80.11908, 25.954705], [-80.119691, 25.955383], [-80.125358, 25.955716], [-80.12881, 25.959146], [-80.125913, 25.960249], [-80.124369, 25.964315], [-80.124369, 25.973651], [-80.126369, 25.973281], [-80.128369, 25.975702], [-80.136369, 25.976071], [-80.137312, 25.982705], [-80.136369, 25.983278], [-80.134739, 25.982705], [-80.134133, 25.980941], [-80.132369, 25.979881], [-80.126369, 25.980605], [-80.127352, 25.981722], [-80.127052, 25.983388], [-80.120369, 25.985032], [-80.118308, 25.986705], [-80.123204, 25.98787], [-80.128369, 25.991682], [-80.130369, 25.9894], [-80.132369, 25.989382], [-80.133343, 25.990705], [-80.134369, 25.998556], [-80.140572, 26.000502], [-80.142963, 26.004705], [-80.140532, 26.010705], [-80.148369, 26.023401], [-80.150369, 26.021931], [-80.151787, 26.022705], [-80.151727, 26.024063], [-80.149417, 26.025753], [-80.14932, 26.028705], [-80.148369, 26.030007], [-80.142369, 26.031479], [-80.140605, 26.032705], [-80.144369, 26.035743], [-80.148369, 26.03404], [-80.148977, 26.035313], [-80.148118, 26.036956], [-80.152369, 26.03977], [-80.156009, 26.040346], [-80.158369, 26.039298], [-80.159073, 26.040001], [-80.156836, 26.045172], [-80.154369, 26.046034], [-80.152369, 26.044799], [-80.148369, 26.046351], [-80.146125, 26.048705], [-80.151849, 26.051225], [-80.154369, 26.050987], [-80.155596, 26.054705], [-80.156369, 26.05501], [-80.158369, 26.053495], [-80.160369, 26.054107], [-80.161053, 26.056705], [-80.160369, 26.059491], [-80.156369, 26.060273], [-80.155582, 26.061918], [-80.154369, 26.062356], [-80.151325, 26.062705], [-80.152369, 26.063504], [-80.158369, 26.063128], [-80.162916, 26.064158], [-80.163899, 26.069175], [-80.165842, 26.071232], [-80.166028, 26.075046], [-80.168038, 26.077036], [-80.168125, 26.080461], [-80.165537, 26.080705], [-80.168067, 26.081007], [-80.168369, 26.084993], [-80.168571, 26.082907], [-80.169471, 26.082705], [-80.168577, 26.082497], [-80.168863, 26.074705], [-80.16709, 26.072705], [-80.167568, 26.068705], [-80.165513, 26.066705], [-80.166369, 26.064417], [-80.168369, 26.064509], [-80.170634, 26.062705], [-80.168369, 26.061234], [-80.166369, 26.061784], [-80.165865, 26.061209], [-80.163177, 26.056705], [-80.163789, 26.052705], [-80.164369, 26.051805], [-80.166633, 26.052441], [-80.168369, 26.054988], [-80.170247, 26.050583], [-80.176369, 26.049339], [-80.177902, 26.047172], [-80.176369, 26.045995], [-80.17222, 26.046556], [-80.169105, 26.045969], [-80.168243, 26.044705], [-80.169123, 26.033459], [-80.171772, 26.033302], [-80.17288, 26.034194], [-80.176369, 26.042198], [-80.180369, 26.03607], [-80.182369, 26.036524], [-80.184369, 26.035623], [-80.185223, 26.033559], [-80.189411, 26.032705], [-80.179901, 26.029173], [-80.177403, 26.026705], [-80.180645, 26.020705], [-80.184892, 26.018705], [-80.182727, 26.016705], [-80.185029, 26.016045], [-80.188369, 26.021477], [-80.192369, 26.020454], [-80.195358, 26.021716], [-80.196988, 26.026086], [-80.200369, 26.028224], [-80.20267, 26.028404], [-80.202799, 26.031135], [-80.200877, 26.032705], [-80.205775, 26.034705], [-80.208369, 26.038842], [-80.209551, 26.033887], [-80.210369, 26.033359], [-80.21253, 26.034544], [-80.213331, 26.036705], [-80.213583, 26.044705], [-80.213078, 26.060705], [-80.212369, 26.062067], [-80.210369, 26.060959], [-80.207665, 26.062705], [-80.208369, 26.063678], [-80.210369, 26.063475], [-80.211304, 26.064705], [-80.210369, 26.065997], [-80.208369, 26.065839], [-80.208369, 26.067258], [-80.212369, 26.067752], [-80.215295, 26.072705], [-80.215975, 26.084311], [-80.214313, 26.084649], [-80.21433, 26.086666], [-80.212231, 26.086843], [-80.216085, 26.086989], [-80.216369, 26.091064]]], "type": "Polygon"}, "properties": {"color": "#bf4040", "contour": 30, "fill": "#bf4040", "fill-opacity": 0.33, "fillColor": "#bf4040", "fillOpacity": 0.33, "metric": "time", "opacity": 0.33}, "type": "Feature"}], "properties": {"name": "Satellite \u2013 Miami Beach"}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_592ca151d7371fe919a16daf986b0941.bindTooltip(
+                `<div>
+                     Satellite – Miami Beach
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_592ca151d7371fe919a16daf986b0941.addTo(feature_group_18a8ca063851cdb0d66d8f6716e9d8f8);
+        
+    
+        function geo_json_6a89ab9659228dc56447da4cafb2c4c1_styler(feature) {
+            switch(feature.properties.fillColor) {
+                default:
+                    return {"color": "#E74C3C", "fillColor": "#E74C3C", "fillOpacity": 0.25, "weight": 2};
+            }
+        }
+        function geo_json_6a89ab9659228dc56447da4cafb2c4c1_highlighter(feature) {
+            switch(feature.properties.fillColor) {
+                default:
+                    return {"weight": 3};
+            }
+        }
+
+        function geo_json_6a89ab9659228dc56447da4cafb2c4c1_onEachFeature(feature, layer) {
+
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_6a89ab9659228dc56447da4cafb2c4c1.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_6a89ab9659228dc56447da4cafb2c4c1_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_6a89ab9659228dc56447da4cafb2c4c1 = L.geoJson(null, {
+                onEachFeature: geo_json_6a89ab9659228dc56447da4cafb2c4c1_onEachFeature,
+            
+                style: geo_json_6a89ab9659228dc56447da4cafb2c4c1_styler,
+            ...{
+}
+        });
+
+        function geo_json_6a89ab9659228dc56447da4cafb2c4c1_add (data) {
+            geo_json_6a89ab9659228dc56447da4cafb2c4c1
+                .addData(data);
+        }
+            geo_json_6a89ab9659228dc56447da4cafb2c4c1_add({"features": [{"geometry": {"coordinates": [[[-80.072425, 26.519086], [-80.072935, 26.509652], [-80.074649, 26.509366], [-80.075167, 26.507884], [-80.076675, 26.507392], [-80.076937, 26.505654], [-80.078425, 26.504135], [-80.078888, 26.499605], [-80.080848, 26.497142], [-80.081145, 26.493142], [-80.082908, 26.491625], [-80.083632, 26.488349], [-80.085258, 26.487142], [-80.085814, 26.482531], [-80.087917, 26.481142], [-80.088104, 26.476821], [-80.090122, 26.476839], [-80.090443, 26.47516], [-80.094074, 26.473142], [-80.095601, 26.464318], [-80.098425, 26.461468], [-80.100425, 26.46268], [-80.109746, 26.457142], [-80.103286, 26.456281], [-80.102425, 26.45457], [-80.100747, 26.457464], [-80.097828, 26.457739], [-80.096185, 26.455142], [-80.096672, 26.450895], [-80.094425, 26.450155], [-80.093988, 26.448705], [-80.098425, 26.447924], [-80.102425, 26.450219], [-80.107531, 26.442248], [-80.110888, 26.441605], [-80.112425, 26.440525], [-80.114425, 26.441102], [-80.116425, 26.439764], [-80.120162, 26.439142], [-80.114425, 26.437226], [-80.112425, 26.438058], [-80.106425, 26.43582], [-80.104425, 26.43719], [-80.102425, 26.433895], [-80.100425, 26.434113], [-80.098819, 26.427142], [-80.099401, 26.424118], [-80.102206, 26.423361], [-80.106315, 26.423252], [-80.106425, 26.423776], [-80.106927, 26.419142], [-80.1053, 26.417142], [-80.105585, 26.411142], [-80.108425, 26.410224], [-80.118714, 26.410853], [-80.118425, 26.412873], [-80.115638, 26.415142], [-80.120945, 26.416622], [-80.120761, 26.419478], [-80.119292, 26.421142], [-80.121833, 26.423734], [-80.122425, 26.426815], [-80.124465, 26.421142], [-80.123178, 26.419142], [-80.124361, 26.413142], [-80.126425, 26.415225], [-80.127858, 26.413142], [-80.126167, 26.4114], [-80.1278, 26.408517], [-80.129183, 26.408384], [-80.130308, 26.40926], [-80.134425, 26.407892], [-80.138425, 26.40777], [-80.142715, 26.408852], [-80.144777, 26.411142], [-80.143992, 26.413142], [-80.145963, 26.415142], [-80.146425, 26.42002], [-80.147535, 26.412252], [-80.150996, 26.409713], [-80.157241, 26.409142], [-80.15308, 26.408487], [-80.152583, 26.406984], [-80.151147, 26.40642], [-80.149378, 26.403142], [-80.149887, 26.398604], [-80.152425, 26.398982], [-80.154716, 26.397433], [-80.160425, 26.395899], [-80.168425, 26.395439], [-80.169895, 26.397142], [-80.16959, 26.409142], [-80.1702, 26.415142], [-80.172105, 26.415462], [-80.172425, 26.422887], [-80.172573, 26.415142], [-80.170693, 26.414874], [-80.17059, 26.413142], [-80.171174, 26.397142], [-80.172425, 26.395421], [-80.177732, 26.395142], [-80.176564, 26.395003], [-80.176425, 26.39311], [-80.174425, 26.393363], [-80.174211, 26.394928], [-80.172425, 26.394975], [-80.170985, 26.393142], [-80.172103, 26.37682], [-80.173992, 26.376709], [-80.174425, 26.374965], [-80.175202, 26.376365], [-80.178425, 26.377736], [-80.183736, 26.372453], [-80.184925, 26.372642], [-80.185316, 26.377142], [-80.183293, 26.381142], [-80.185264, 26.383142], [-80.1843, 26.385142], [-80.185836, 26.385731], [-80.186805, 26.387522], [-80.187513, 26.38423], [-80.189921, 26.382638], [-80.190221, 26.379142], [-80.18911, 26.377142], [-80.190924, 26.375142], [-80.189647, 26.373142], [-80.190425, 26.371887], [-80.198645, 26.371362], [-80.200425, 26.370144], [-80.202853, 26.37157], [-80.204174, 26.371393], [-80.204425, 26.372303], [-80.204859, 26.369576], [-80.207482, 26.367142], [-80.205012, 26.366555], [-80.204169, 26.365398], [-80.200425, 26.365736], [-80.196892, 26.364675], [-80.194425, 26.362833], [-80.191785, 26.363782], [-80.190694, 26.363142], [-80.191135, 26.361142], [-80.192971, 26.359688], [-80.193428, 26.356145], [-80.195736, 26.354454], [-80.197208, 26.354359], [-80.198801, 26.355142], [-80.200738, 26.358829], [-80.202425, 26.364716], [-80.203238, 26.359142], [-80.205933, 26.357142], [-80.206421, 26.355138], [-80.211358, 26.350075], [-80.216425, 26.350042], [-80.218452, 26.349142], [-80.210425, 26.346258], [-80.205924, 26.347643], [-80.205261, 26.347142], [-80.20587, 26.343142], [-80.203242, 26.341142], [-80.205107, 26.339142], [-80.204461, 26.337142], [-80.207023, 26.333142], [-80.205887, 26.330604], [-80.210419, 26.329142], [-80.208023, 26.327544], [-80.208611, 26.325142], [-80.210872, 26.324695], [-80.214425, 26.329048], [-80.215304, 26.328021], [-80.213473, 26.321142], [-80.209926, 26.319641], [-80.20947, 26.317142], [-80.220425, 26.312362], [-80.222425, 26.31269], [-80.224962, 26.311142], [-80.224425, 26.309989], [-80.222425, 26.310003], [-80.208425, 26.303683], [-80.207886, 26.307142], [-80.206425, 26.309243], [-80.204728, 26.307142], [-80.204199, 26.302916], [-80.241502, 26.302065], [-80.244425, 26.304332], [-80.247134, 26.304434], [-80.25125, 26.306317], [-80.251732, 26.307142], [-80.250238, 26.309142], [-80.250274, 26.310991], [-80.252425, 26.314175], [-80.253249, 26.311966], [-80.255801, 26.311142], [-80.254193, 26.309374], [-80.256053, 26.307142], [-80.255212, 26.305142], [-80.258425, 26.304266], [-80.270425, 26.303969], [-80.278425, 26.305147], [-80.28317, 26.303887], [-80.290425, 26.303551], [-80.291055, 26.301772], [-80.294425, 26.301368], [-80.294715, 26.299432], [-80.297, 26.299142], [-80.298142, 26.199142], [-80.297713, 26.197854], [-80.296044, 26.197523], [-80.295938, 26.194655], [-80.297782, 26.193142], [-80.298166, 26.189142], [-80.299918, 26.188635], [-80.300257, 26.186974], [-80.30594, 26.184657], [-80.306265, 26.182982], [-80.307951, 26.182668], [-80.308269, 26.180986], [-80.309961, 26.180678], [-80.310272, 26.178989], [-80.311969, 26.178686], [-80.312274, 26.176992], [-80.313978, 26.176695], [-80.314277, 26.174994], [-80.315986, 26.174703], [-80.31628, 26.172997], [-80.319922, 26.172639], [-80.320265, 26.170982], [-80.321903, 26.17062], [-80.322263, 26.16898], [-80.323883, 26.1686], [-80.324277, 26.166994], [-80.326017, 26.166734], [-80.32629, 26.165007], [-80.328025, 26.164742], [-80.328293, 26.16301], [-80.330032, 26.162749], [-80.330295, 26.161012], [-80.332038, 26.160755], [-80.332297, 26.159014], [-80.334045, 26.158762], [-80.334299, 26.157016], [-80.33605, 26.156767], [-80.336301, 26.155018], [-80.339763, 26.15448], [-80.34025, 26.152967], [-80.343704, 26.150421], [-80.344301, 26.147018], [-80.345906, 26.146623], [-80.346425, 26.141588], [-80.350425, 26.142382], [-80.35319, 26.141907], [-80.356152, 26.138869], [-80.357663, 26.13838], [-80.358203, 26.13692], [-80.359823, 26.13654], [-80.360236, 26.134953], [-80.363883, 26.1346], [-80.364211, 26.129142], [-80.366425, 26.12897], [-80.366805, 26.130763], [-80.374425, 26.130963], [-80.374839, 26.132728], [-80.382425, 26.132956], [-80.38288, 26.134687], [-80.392425, 26.134945], [-80.392825, 26.136742], [-80.400425, 26.136936], [-80.40087, 26.138697], [-80.408425, 26.138926], [-80.408972, 26.140595], [-80.416425, 26.140915], [-80.416914, 26.142653], [-80.426425, 26.142899], [-80.426917, 26.14465], [-80.434425, 26.144886], [-80.434956, 26.146611], [-80.440607, 26.14696], [-80.440728, 26.153142], [-80.443435, 26.155142], [-80.442758, 26.161142], [-80.443195, 26.162372], [-80.44497, 26.163142], [-80.444907, 26.177142], [-80.447267, 26.1803], [-80.448857, 26.181142], [-80.448914, 26.189142], [-80.450929, 26.191142], [-80.451001, 26.199142], [-80.453023, 26.201142], [-80.453099, 26.207142], [-80.455128, 26.209142], [-80.45529, 26.217142], [-80.457339, 26.219142], [-80.457527, 26.225142], [-80.459609, 26.227142], [-80.460147, 26.235142], [-80.462262, 26.235305], [-80.462425, 26.237721], [-80.462634, 26.234933], [-80.460952, 26.231142], [-80.461263, 26.225142], [-80.459394, 26.223142], [-80.459318, 26.215142], [-80.457645, 26.213142], [-80.457729, 26.207142], [-80.455778, 26.205142], [-80.455736, 26.197142], [-80.453887, 26.195142], [-80.453793, 26.187142], [-80.451966, 26.185142], [-80.451566, 26.178001], [-80.450017, 26.177142], [-80.451953, 26.175142], [-80.450037, 26.173142], [-80.449672, 26.165142], [-80.448082, 26.163142], [-80.448037, 26.157142], [-80.447649, 26.155918], [-80.446115, 26.155142], [-80.446425, 26.150212], [-80.448425, 26.15042], [-80.450425, 26.148616], [-80.519719, 26.148436], [-80.549977, 26.147142], [-80.523655, 26.145912], [-80.460425, 26.145455], [-80.45981, 26.143757], [-80.458425, 26.143449], [-80.448425, 26.143394], [-80.444425, 26.142278], [-80.442162, 26.139405], [-80.442043, 26.131142], [-80.44166, 26.129907], [-80.440068, 26.129142], [-80.439657, 26.12191], [-80.438031, 26.121142], [-80.437998, 26.115142], [-80.435985, 26.113142], [-80.436093, 26.10881], [-80.44235, 26.107142], [-80.435929, 26.105142], [-80.435165, 26.058402], [-80.434425, 26.057585], [-80.432425, 26.057999], [-80.428821, 26.056746], [-80.426425, 26.054751], [-80.424425, 26.057202], [-80.421483, 26.053142], [-80.418835, 26.052732], [-80.418425, 26.050973], [-80.417958, 26.052675], [-80.416282, 26.052999], [-80.415807, 26.054524], [-80.413046, 26.054521], [-80.412425, 26.050105], [-80.411346, 26.049142], [-80.411727, 26.047142], [-80.408425, 26.045989], [-80.407264, 26.047142], [-80.407616, 26.049142], [-80.406425, 26.050404], [-80.405323, 26.049142], [-80.405866, 26.047142], [-80.402709, 26.044858], [-80.402425, 26.043012], [-80.400425, 26.043473], [-80.398847, 26.04272], [-80.396425, 26.039135], [-80.394155, 26.042872], [-80.389829, 26.041738], [-80.389153, 26.037142], [-80.386425, 26.033771], [-80.384895, 26.033612], [-80.383361, 26.036078], [-80.380425, 26.036705], [-80.379217, 26.03435], [-80.377561, 26.033142], [-80.377444, 26.031142], [-80.378425, 26.030184], [-80.384425, 26.030695], [-80.392425, 26.029827], [-80.394016, 26.031142], [-80.394774, 26.033491], [-80.396425, 26.033039], [-80.398425, 26.029961], [-80.404425, 26.030505], [-80.406213, 26.029142], [-80.400425, 26.027998], [-80.396425, 26.028464], [-80.393977, 26.02759], [-80.393746, 26.026463], [-80.394879, 26.025142], [-80.392577, 26.02299], [-80.392425, 26.021582], [-80.391434, 26.024151], [-80.389848, 26.025142], [-80.391176, 26.026391], [-80.390862, 26.027579], [-80.384425, 26.028317], [-80.380023, 26.027544], [-80.37768, 26.023142], [-80.377028, 26.015142], [-80.377964, 26.013142], [-80.376425, 26.011113], [-80.375811, 26.015142], [-80.374099, 26.018816], [-80.374585, 26.021302], [-80.372626, 26.023343], [-80.372277, 26.025142], [-80.370425, 26.026317], [-80.369615, 26.025952], [-80.368611, 26.020956], [-80.36199, 26.013142], [-80.367797, 26.008514], [-80.372425, 26.008907], [-80.373503, 26.007142], [-80.372425, 26.006566], [-80.366425, 26.006732], [-80.363178, 26.004389], [-80.362938, 26.001655], [-80.36474, 26.001142], [-80.364425, 25.998642], [-80.361529, 26.001142], [-80.361061, 26.003778], [-80.358425, 26.004096], [-80.357706, 26.006423], [-80.356425, 26.006723], [-80.353382, 26.006185], [-80.352425, 26.004731], [-80.345211, 26.004356], [-80.344425, 26.000623], [-80.342425, 26.000084], [-80.341801, 25.995142], [-80.344087, 25.993142], [-80.34413, 25.990847], [-80.345526, 25.990243], [-80.347607, 25.986324], [-80.353861, 25.980578], [-80.355343, 25.980224], [-80.358229, 25.981142], [-80.360425, 25.984385], [-80.361581, 25.980298], [-80.367021, 25.979142], [-80.361672, 25.977895], [-80.360425, 25.97484], [-80.359052, 25.977142], [-80.356425, 25.978162], [-80.3539, 25.975667], [-80.35278, 25.965142], [-80.353028, 25.961745], [-80.353829, 25.961142], [-80.353918, 25.949142], [-80.358048, 25.944765], [-80.36136, 25.944077], [-80.369921, 25.934638], [-80.373216, 25.933933], [-80.375175, 25.931892], [-80.375805, 25.928522], [-80.377466, 25.927142], [-80.377716, 25.924433], [-80.3793, 25.923142], [-80.37917, 25.919142], [-80.381006, 25.917142], [-80.380837, 25.911554], [-80.382517, 25.911234], [-80.382425, 25.909508], [-80.382392, 25.911109], [-80.380236, 25.911142], [-80.379909, 25.915142], [-80.377785, 25.917142], [-80.378021, 25.922738], [-80.3763, 25.923017], [-80.376016, 25.926733], [-80.373372, 25.927142], [-80.374004, 25.927563], [-80.373831, 25.930548], [-80.372145, 25.930862], [-80.371779, 25.932496], [-80.367604, 25.932321], [-80.363543, 25.93626], [-80.361589, 25.940306], [-80.354425, 25.942189], [-80.35319, 25.938377], [-80.351733, 25.937142], [-80.350886, 25.933142], [-80.351519, 25.925142], [-80.350714, 25.923142], [-80.350425, 25.904204], [-80.349654, 25.941142], [-80.348425, 25.942634], [-80.342838, 25.942729], [-80.342425, 25.939963], [-80.341843, 25.94256], [-80.339267, 25.943142], [-80.342425, 25.944643], [-80.348425, 25.943836], [-80.349965, 25.945142], [-80.349988, 25.947142], [-80.348421, 25.949142], [-80.343512, 25.952229], [-80.339119, 25.957836], [-80.335691, 25.958408], [-80.329247, 25.965964], [-80.325614, 25.966331], [-80.324425, 25.96781], [-80.321371, 25.968088], [-80.320425, 25.969604], [-80.314797, 25.969142], [-80.31609, 25.967142], [-80.312791, 25.964776], [-80.312244, 25.959142], [-80.316103, 25.957142], [-80.310997, 25.95657], [-80.309972, 25.952689], [-80.309111, 25.953142], [-80.308737, 25.955454], [-80.306425, 25.955834], [-80.304414, 25.955142], [-80.305166, 25.953883], [-80.308425, 25.952843], [-80.309466, 25.949142], [-80.306425, 25.947318], [-80.305603, 25.94832], [-80.302404, 25.949163], [-80.300085, 25.945142], [-80.302425, 25.9417], [-80.304184, 25.941383], [-80.304164, 25.943403], [-80.305851, 25.943142], [-80.307638, 25.938355], [-80.309404, 25.938163], [-80.312425, 25.940585], [-80.313597, 25.936314], [-80.316576, 25.935293], [-80.314425, 25.933087], [-80.32143, 25.929142], [-80.3254, 25.928117], [-80.326196, 25.927142], [-80.324167, 25.9254], [-80.325235, 25.923952], [-80.326335, 25.915052], [-80.328396, 25.915113], [-80.330997, 25.913142], [-80.325994, 25.909573], [-80.325487, 25.902204], [-80.328425, 25.9016], [-80.329116, 25.899833], [-80.330425, 25.899451], [-80.338682, 25.899142], [-80.327884, 25.897683], [-80.325538, 25.896029], [-80.324425, 25.887053], [-80.323879, 25.894596], [-80.32258, 25.899142], [-80.323378, 25.909142], [-80.322425, 25.911008], [-80.320373, 25.911142], [-80.321197, 25.913142], [-80.323016, 25.914551], [-80.323029, 25.921142], [-80.320425, 25.92388], [-80.316173, 25.923394], [-80.31356, 25.922007], [-80.311341, 25.919142], [-80.312425, 25.91788], [-80.315157, 25.917142], [-80.315709, 25.913142], [-80.314425, 25.911639], [-80.312425, 25.912596], [-80.308425, 25.909887], [-80.304502, 25.915219], [-80.302425, 25.914169], [-80.301401, 25.917142], [-80.303407, 25.91816], [-80.303905, 25.921142], [-80.302425, 25.922236], [-80.300425, 25.922187], [-80.299203, 25.91392], [-80.300425, 25.911659], [-80.302029, 25.911142], [-80.300425, 25.910308], [-80.298425, 25.907531], [-80.296425, 25.908203], [-80.293847, 25.90772], [-80.293146, 25.905142], [-80.295009, 25.903142], [-80.292425, 25.898669], [-80.288215, 25.904932], [-80.290863, 25.908704], [-80.291081, 25.915142], [-80.290425, 25.915833], [-80.286425, 25.915796], [-80.284425, 25.914275], [-80.281652, 25.913915], [-80.260159, 25.913408], [-80.261743, 25.911142], [-80.26186, 25.908577], [-80.263281, 25.905998], [-80.264425, 25.905173], [-80.266425, 25.905526], [-80.268425, 25.907663], [-80.269592, 25.906309], [-80.27018, 25.905142], [-80.26896, 25.899142], [-80.269383, 25.8981], [-80.271421, 25.897142], [-80.268425, 25.893988], [-80.266425, 25.894349], [-80.264425, 25.893258], [-80.262666, 25.890901], [-80.262425, 25.888967], [-80.260751, 25.891468], [-80.258425, 25.890539], [-80.256425, 25.892226], [-80.25522, 25.891142], [-80.255077, 25.889142], [-80.256614, 25.887142], [-80.255122, 25.884445], [-80.248897, 25.88067], [-80.246425, 25.880619], [-80.245726, 25.879841], [-80.243536, 25.873142], [-80.246425, 25.870989], [-80.250425, 25.870044], [-80.252406, 25.867142], [-80.245073, 25.864494], [-80.242425, 25.859463], [-80.236425, 25.856098], [-80.234534, 25.851142], [-80.235803, 25.84852], [-80.240146, 25.847142], [-80.239397, 25.845142], [-80.235597, 25.84397], [-80.234425, 25.84187], [-80.229584, 25.841983], [-80.224425, 25.835794], [-80.222717, 25.837434], [-80.221755, 25.837142], [-80.221836, 25.835142], [-80.224031, 25.834748], [-80.227124, 25.831142], [-80.220425, 25.828517], [-80.219223, 25.827142], [-80.219755, 25.825142], [-80.216425, 25.8222], [-80.214202, 25.821365], [-80.208814, 25.815142], [-80.216425, 25.814178], [-80.222607, 25.815324], [-80.227233, 25.81395], [-80.235832, 25.813142], [-80.226425, 25.812716], [-80.224425, 25.811137], [-80.212425, 25.812167], [-80.208094, 25.811473], [-80.20679, 25.791142], [-80.206857, 25.789574], [-80.208432, 25.789135], [-80.204875, 25.788692], [-80.204533, 25.787034], [-80.202638, 25.786929], [-80.202425, 25.784404], [-80.202256, 25.788973], [-80.201387, 25.789142], [-80.20407, 25.789497], [-80.204181, 25.793142], [-80.205657, 25.79391], [-80.205976, 25.795142], [-80.204976, 25.809693], [-80.198425, 25.809886], [-80.194425, 25.808853], [-80.192425, 25.810104], [-80.18208, 25.811142], [-80.19134, 25.812227], [-80.194425, 25.813639], [-80.199728, 25.812445], [-80.204877, 25.813142], [-80.204425, 25.821236], [-80.202425, 25.819998], [-80.200425, 25.820303], [-80.191193, 25.827142], [-80.18846, 25.831177], [-80.186425, 25.830452], [-80.184601, 25.833142], [-80.190193, 25.835374], [-80.191694, 25.839142], [-80.190425, 25.841496], [-80.181723, 25.847142], [-80.182805, 25.848762], [-80.189301, 25.851142], [-80.187406, 25.854123], [-80.184425, 25.855997], [-80.182786, 25.861503], [-80.179392, 25.863142], [-80.18113, 25.867142], [-80.179709, 25.869142], [-80.183013, 25.870554], [-80.183035, 25.871752], [-80.176368, 25.873085], [-80.177854, 25.875142], [-80.176931, 25.877142], [-80.177208, 25.881142], [-80.176471, 25.883142], [-80.174425, 25.884947], [-80.172425, 25.886104], [-80.170425, 25.884934], [-80.169363, 25.887142], [-80.167809, 25.887758], [-80.166277, 25.88729], [-80.164425, 25.884927], [-80.161621, 25.888338], [-80.159392, 25.889142], [-80.160516, 25.891051], [-80.160043, 25.893142], [-80.157249, 25.895142], [-80.158143, 25.895424], [-80.157685, 25.898402], [-80.150425, 25.898977], [-80.150204, 25.900921], [-80.147662, 25.901142], [-80.151114, 25.903142], [-80.147896, 25.909142], [-80.150718, 25.913435], [-80.148035, 25.913532], [-80.14595, 25.911617], [-80.145647, 25.909142], [-80.143847, 25.90772], [-80.14294, 25.904627], [-80.139938, 25.905142], [-80.139685, 25.907142], [-80.140632, 25.909142], [-80.140029, 25.911142], [-80.141935, 25.913142], [-80.14112, 25.915142], [-80.142649, 25.916918], [-80.144795, 25.916772], [-80.145652, 25.919915], [-80.147717, 25.92185], [-80.152425, 25.92268], [-80.152618, 25.923335], [-80.142425, 25.923496], [-80.141133, 25.92385], [-80.140425, 25.925516], [-80.13812, 25.925447], [-80.137367, 25.9242], [-80.134597, 25.92297], [-80.134488, 25.921079], [-80.131519, 25.920048], [-80.130366, 25.917083], [-80.129494, 25.918211], [-80.129413, 25.921142], [-80.131002, 25.923142], [-80.131252, 25.925969], [-80.130425, 25.926604], [-80.129122, 25.925142], [-80.128855, 25.922712], [-80.125855, 25.921712], [-80.125081, 25.918486], [-80.123666, 25.917142], [-80.123332, 25.914049], [-80.124422, 25.911142], [-80.123122, 25.910445], [-80.12277, 25.909142], [-80.123577, 25.905142], [-80.122245, 25.905142], [-80.120932, 25.927142], [-80.119213, 25.929142], [-80.118877, 25.933142], [-80.118682, 25.951142], [-80.117098, 25.951815], [-80.116762, 25.953142], [-80.117098, 25.954469], [-80.118676, 25.955142], [-80.118807, 25.965142], [-80.117232, 25.965949], [-80.116828, 25.967142], [-80.116654, 25.987142], [-80.11501, 25.987727], [-80.114718, 25.989142], [-80.11501, 25.990557], [-80.116638, 25.991142], [-80.114891, 25.991608], [-80.114658, 25.993142], [-80.114581, 26.015142], [-80.112748, 26.015465], [-80.112586, 26.017142], [-80.112748, 26.018819], [-80.114573, 26.019142], [-80.112731, 26.019448], [-80.112545, 26.043142], [-80.11067, 26.043387], [-80.110548, 26.045142], [-80.110548, 26.059142], [-80.110817, 26.06075], [-80.111606, 26.060323], [-80.113056, 26.061142], [-80.111582, 26.061985], [-80.110858, 26.061575], [-80.110556, 26.063142], [-80.110425, 26.070473], [-80.109287, 26.072004], [-80.108803, 26.07552], [-80.108727, 26.089142], [-80.107261, 26.089978], [-80.106919, 26.093142], [-80.104629, 26.093346], [-80.104516, 26.105142], [-80.102603, 26.10532], [-80.102603, 26.108964], [-80.104508, 26.109142], [-80.102604, 26.109321], [-80.102508, 26.125142], [-80.100597, 26.125314], [-80.100519, 26.147142], [-80.098618, 26.147335], [-80.098531, 26.159142], [-80.096654, 26.159371], [-80.096537, 26.175142], [-80.094684, 26.175401], [-80.09455, 26.187142], [-80.09269, 26.187407], [-80.092573, 26.203142], [-80.090752, 26.203469], [-80.090592, 26.215142], [-80.08879, 26.215507], [-80.088608, 26.217142], [-80.088583, 26.233142], [-80.086761, 26.233478], [-80.086603, 26.241142], [-80.084813, 26.24153], [-80.08463, 26.251142], [-80.082879, 26.251596], [-80.082616, 26.257333], [-80.079205, 26.257922], [-80.078815, 26.259142], [-80.078816, 26.277142], [-80.076944, 26.279142], [-80.076808, 26.299142], [-80.074842, 26.301142], [-80.074735, 26.319142], [-80.073194, 26.319911], [-80.07281, 26.321142], [-80.072838, 26.329142], [-80.071111, 26.331142], [-80.071148, 26.337142], [-80.069196, 26.339913], [-80.068921, 26.359142], [-80.067135, 26.361142], [-80.06717, 26.377142], [-80.065109, 26.379826], [-80.065548, 26.401142], [-80.063847, 26.40372], [-80.064425, 26.407221], [-80.06493, 26.405647], [-80.067568, 26.404285], [-80.069255, 26.405142], [-80.068841, 26.407558], [-80.067089, 26.409142], [-80.06837, 26.423142], [-80.067544, 26.425142], [-80.06996, 26.427142], [-80.069065, 26.429142], [-80.069663, 26.431142], [-80.069126, 26.433843], [-80.06652, 26.437142], [-80.064425, 26.437887], [-80.062425, 26.437044], [-80.06207, 26.441142], [-80.062425, 26.442002], [-80.063775, 26.440492], [-80.066676, 26.441142], [-80.065757, 26.445142], [-80.066425, 26.451207], [-80.068425, 26.449267], [-80.070135, 26.448852], [-80.074425, 26.449803], [-80.080425, 26.453019], [-80.082425, 26.452492], [-80.082425, 26.45332], [-80.08056, 26.453277], [-80.075778, 26.456495], [-80.072425, 26.456698], [-80.070522, 26.459239], [-80.067288, 26.461142], [-80.068527, 26.463142], [-80.071966, 26.465601], [-80.074425, 26.465321], [-80.082425, 26.469684], [-80.086425, 26.468619], [-80.087153, 26.473142], [-80.085841, 26.474558], [-80.085669, 26.479142], [-80.083903, 26.48062], [-80.083717, 26.486434], [-80.082085, 26.486802], [-80.081623, 26.49034], [-80.080063, 26.491142], [-80.079692, 26.496409], [-80.078038, 26.497142], [-80.077832, 26.502549], [-80.07609, 26.503142], [-80.0758, 26.506517], [-80.074215, 26.506932], [-80.07378, 26.508497], [-80.072232, 26.508949], [-80.071987, 26.512704], [-80.070836, 26.513142], [-80.072094, 26.515473], [-80.072425, 26.519086]]], "type": "Polygon"}, "properties": {"color": "#bf4040", "contour": 30, "fill": "#bf4040", "fill-opacity": 0.33, "fillColor": "#bf4040", "fillOpacity": 0.33, "metric": "time", "opacity": 0.33}, "type": "Feature"}], "properties": {"name": "Satellite \u2013 Weston"}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_6a89ab9659228dc56447da4cafb2c4c1.bindTooltip(
+                `<div>
+                     Satellite – Weston
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            geo_json_6a89ab9659228dc56447da4cafb2c4c1.addTo(feature_group_18a8ca063851cdb0d66d8f6716e9d8f8);
+        
+    
+            feature_group_18a8ca063851cdb0d66d8f6716e9d8f8.addTo(map_87ee3482cb59cf019a6facb798f42f7e);
+        
+    
+            var layer_control_cd42dfdffe012634ba8630d62c67af9b_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_1f81406e65af61515912ad21176148c2,
+                },
+                overlays :  {
+                    "Competitor Heat" : feature_group_123b24d5602e6199d903618f24c62c9d,
+                    "Competitor Points" : marker_cluster_4f3f99819ab0a87e5b53422a506d52e4,
+                    "Our Clinics" : feature_group_ff754ec930bdd70a7e23d612840eb739,
+                    "Primary Service Area (30-min drive)" : feature_group_18a8ca063851cdb0d66d8f6716e9d8f8,
+                },
+            };
+            let layer_control_cd42dfdffe012634ba8630d62c67af9b = L.control.layers(
+                layer_control_cd42dfdffe012634ba8630d62c67af9b_layers.base_layers,
+                layer_control_cd42dfdffe012634ba8630d62c67af9b_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_87ee3482cb59cf019a6facb798f42f7e);
+
+        
+</script>
+</html>
